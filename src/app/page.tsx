@@ -3,9 +3,10 @@
 import SocialMedia from "@/components/SocialMedia";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { AnimateIn } from "@/components/animations/AnimateIn";
-import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
+import { ExternalLink, ChevronDown, ChevronUp, ArrowUpRight } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
   // const [isProjectsExpanded, setIsProjectsExpanded] = useState(false);
@@ -286,11 +287,12 @@ export default function Home() {
             </div>
           </AnimateIn>
         </section>
-      </AnimateIn>
-
-      <AnimateIn variant="fadeUp" delay={1.2}>
+      </AnimateIn>      <AnimateIn variant="fadeUp" delay={1.2}>
         <footer className="pt-4 text-xs text-zinc-400 dark:text-zinc-500 flex justify-between items-center">
-          <div>Rohit Debnath</div>
+          <Link href="/gallery" className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors flex items-center gap-2">
+            Gallery
+            <ArrowUpRight className="w-3 h-3 transform rotate-12" />
+          </Link>
           <div>Built with 🤍</div>
         </footer>
       </AnimateIn>
