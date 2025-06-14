@@ -61,11 +61,10 @@ export default function Home() {
     for (let i = 0; i < 20; i++) {
       setTimeout(() => rainConfetti(), i * 50);
     }
-  };
-  return (
-    <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-4 py-4 mt-8">
+  };  return (
+    <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-4 py-4 mt-2">
       <AnimateIn variant="fadeUp">
-        {/* Spotify Music Section */}        <section className="mb-6">
+        {/* Spotify Music Section */}        <section className="mb-3">
           <AnimateIn variant="fadeUp" delay={0.1}>
             <div className="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm hover:shadow-lg transition-all duration-300">
               <div className="pt-3 px-3 pb-2">
@@ -100,7 +99,8 @@ export default function Home() {
         <section className="mb-12">
           <AnimateIn variant="fadeUp" delay={0.2}>
             <h1 className="text-xl font-medium tracking-tight mb-8 flex items-baseline justify-between">
-              <span>Hey, I&apos;m Rohit</span>
+              <span>Hey, I&apos;m Rohit ᯓᡣ𐭩
+              </span>
               <ThemeToggle />
             </h1>
           </AnimateIn>
@@ -146,7 +146,7 @@ export default function Home() {
         <section className="mb-12">
           <AnimateIn variant="reveal" delay={0.3}>
             <h2 className="text-lg font-medium tracking-tight mb-4 inline-block">
-              Projects
+              Projects▼
             </h2>
           </AnimateIn>
           <div className="space-y-8">
@@ -227,7 +227,7 @@ export default function Home() {
         <section className="mb-12">
           <AnimateIn variant="reveal" delay={0.5}>
             <h2 className="text-lg font-medium tracking-tight mb-4 inline-block">
-              Experience
+              Experience▼
             </h2>
           </AnimateIn>
           <div className="space-y-8">
@@ -296,7 +296,7 @@ export default function Home() {
         <section className="mb-12">
           <AnimateIn variant="reveal" delay={0.7}>
             <h2 className="text-lg font-medium tracking-tight mb-4 inline-block">
-              Tools & Stack
+              Tools & Stack▼
             </h2>
           </AnimateIn>
           <div className="grid grid-cols-5 sm:grid-cols-7 gap-y-6 gap-x-4">
@@ -326,7 +326,7 @@ export default function Home() {
         <section className="mb-12">
           <AnimateIn variant="reveal" delay={0.9}>
             <h2 className="text-lg font-medium tracking-tight mb-4 inline-block">
-              Achievements
+              Achievements▼
             </h2>
           </AnimateIn>
           <div className="space-y-3">
@@ -389,13 +389,13 @@ export default function Home() {
             rohitdebnat.me
             {/* <ArrowUpRight className="w-3 h-3 transform rotate-12" /> */}
           </Link>
-          <div 
+            <div 
             onClick={handleHeartRain}
             className="cursor-pointer hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors select-none hover:scale-105 transform duration-200"
             title="Click for some love rain!"
-          >
-            Built with 🤍
-          </div>
+            >
+            Built with <span className="text-lg">♥</span>
+            </div>
         </footer>
       </AnimateIn>
     </main>
