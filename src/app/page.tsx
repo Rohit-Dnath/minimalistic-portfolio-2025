@@ -7,6 +7,7 @@ import { ExternalLink, ChevronDown, ChevronUp, ArrowUpRight } from "lucide-react
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import confetti from "canvas-confetti";
 
 export default function Home() {
   // const [isProjectsExpanded, setIsProjectsExpanded] = useState(false);
@@ -18,7 +19,49 @@ export default function Home() {
   const initialExperienceCount = 2;
   const visibleExperience = isExperienceExpanded
     ? experience
-    : experience.slice(0, initialExperienceCount);
+    : experience.slice(0, initialExperienceCount);  const handleHeartRain = () => {
+    const duration = 3000; // 3 seconds
+    const animationEnd = Date.now() + duration;
+    
+    // Create a custom heart shape
+    const heartShape = confetti.shapeFromText({ text: '🤍', scalar: 2 });
+    
+    // Raining effect - hearts falling from top of screen
+    const rainConfetti = () => {
+      confetti({
+        particleCount: 3,
+        startVelocity: 0,
+        ticks: 300,
+        gravity: 0.5,
+        origin: {
+          x: Math.random(),
+          y: -0.1 // Start from above the screen
+        },
+        shapes: [heartShape],
+        scalar: 1.5,
+        drift: Math.random() - 0.5, // Add some horizontal drift
+        colors: ['#ffffff', '#f8fafc', '#f1f5f9']
+      });
+    };
+
+    // Create continuous rain effect
+    const rainInterval = setInterval(() => {
+      if (Date.now() > animationEnd) {
+        clearInterval(rainInterval);
+        return;
+      }
+      
+      // Create multiple hearts at different positions
+      for (let i = 0; i < 5; i++) {
+        setTimeout(() => rainConfetti(), i * 100);
+      }
+    }, 200);
+
+    // Initial burst for immediate effect
+    for (let i = 0; i < 20; i++) {
+      setTimeout(() => rainConfetti(), i * 50);
+    }
+  };
   return (
     <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-4 py-4 mt-8">
       <AnimateIn variant="fadeUp">
@@ -78,15 +121,15 @@ export default function Home() {
                 </svg>
                 Gallery
               </Link>              <a
-                href="https://wa.me/919395225856?text=Hey%20Rohit%2C%20I%27d%20love%20to%20hire%20you%21"
+                href="https://lolurl.site/resume-jun"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-green-300 dark:border-green-700 text-green-700 dark:text-green-400 text-xs font-medium rounded-md hover:bg-green-50 dark:hover:bg-green-900/20 transition-colors duration-200"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-blue-300 dark:border-blue-700 text-blue-700 dark:text-blue-400 text-xs font-medium rounded-md hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200"
               >
-                <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                 </svg>
-                Hire Me
+                Resume
               </a>
             </div>
           </AnimateIn>
@@ -318,14 +361,14 @@ export default function Home() {
                 Get in Touch
               </h2>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-md mx-auto">
-                Want to chat? Just shoot me a dm  with a direct question on{" "}
+                DM me on{" "}
                 <a
                   href="https://lolurl.site/rohitx"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
                 >
-                  twitter
+                  X (twitter)
                 </a>{" or "}
                 <a
                   href="https://lolurl.site/rohitli"
@@ -335,18 +378,24 @@ export default function Home() {
                 >
                   LinkedIn
                 </a>{" "}
-                and I'll respond whenever I can. I will ignore all soliciting.
+                if you want to chat or hire me for internship or freelance. No spam I repeat no crypto pitches :D
               </p>
             </div>
           </AnimateIn>
         </section>
-      </AnimateIn>      <AnimateIn variant="fadeUp" delay={1.2}>
-        <footer className="pt-4 text-xs text-zinc-400 dark:text-zinc-500 flex justify-between items-center">
-          <Link href="/gallery" className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors flex items-center gap-2">
-            Gallery
-            <ArrowUpRight className="w-3 h-3 transform rotate-12" />
+      </AnimateIn>
+      <AnimateIn variant="fadeUp" delay={1.2}>        <footer className="pt-4 text-xs text-zinc-400 dark:text-zinc-500 flex justify-between items-center">
+          <Link href="#" className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors flex items-center gap-2">
+            rohitdebnat.me
+            {/* <ArrowUpRight className="w-3 h-3 transform rotate-12" /> */}
           </Link>
-          <div>Built with 🤍</div>
+          <div 
+            onClick={handleHeartRain}
+            className="cursor-pointer hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors select-none hover:scale-105 transform duration-200"
+            title="Click for some love rain!"
+          >
+            Built with 🤍
+          </div>
         </footer>
       </AnimateIn>
     </main>
