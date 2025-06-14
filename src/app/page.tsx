@@ -19,10 +19,41 @@ export default function Home() {
   const visibleExperience = isExperienceExpanded
     ? experience
     : experience.slice(0, initialExperienceCount);
-
   return (
-    <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-4 py-4 mt-16">
+    <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-4 py-4 mt-8">
       <AnimateIn variant="fadeUp">
+        {/* Spotify Music Section */}        <section className="mb-6">
+          <AnimateIn variant="fadeUp" delay={0.1}>
+            <div className="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm hover:shadow-lg transition-all duration-300">
+              <div className="pt-3 px-3 pb-2">
+                <div className="flex items-center gap-2">
+                  <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.84-.179-.84-.66 0-.479.359-.78.719-.84 4.561-1.021 8.52-.621 11.64 1.32.42.18.479.659.301 1.02l-.238.061zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.481.78.241 1.2zm.120-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+                  </svg>
+                  <h2 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                    Currently vibing to
+                  </h2>
+                </div>
+              </div>
+              <div className="px-2 pb-1">
+                <div className="overflow-hidden rounded-lg">
+                  <iframe 
+                    style={{borderRadius: '8px'}} 
+                    src="https://open.spotify.com/embed/track/6J9OBBRpR4JZqUkewgDjsS?utm_source=generator&theme=0" 
+                    width="100%" 
+                    height="100" 
+                    frameBorder="0" 
+                    allowFullScreen 
+                    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
+                    loading="lazy"
+                    className="w-full"
+                  />
+                </div>
+              </div>
+            </div>
+          </AnimateIn>
+        </section>
+
         <section className="mb-12">
           <AnimateIn variant="fadeUp" delay={0.2}>
             <h1 className="text-xl font-medium tracking-tight mb-8 flex items-baseline justify-between">
@@ -490,7 +521,7 @@ const tools = [
     title: "ExpressJS",
   },
   {
-    logo: "data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='100' height='100' viewBox='0 0 48 48'><g id='Ð¡Ð»Ð¾Ð¹_1'><linearGradient id='SVGID_1__sH0rW2TvYdr9_gr1' x1='14.073' x2='14.073' y1='8.468' y2='36.033' gradientUnits='userSpaceOnUse'><stop offset='0' stop-color='%237dffce'></stop><stop offset='1' stop-color='%2350c08d'></stop></linearGradient><path fill='url(%23SVGID_1__sH0rW2TvYdr9_gr1)' d='M24.2,30V6.3c0-1.8-2.3-2.6-3.4-1.2L4.5,25.9c-1.3,1.7-0.1,4.1,2,4.1H24.2z'></path><linearGradient id='SVGID_00000140728474547789280440000018204366184369975479__sH0rW2TvYdr9_gr2' x1='34.249' x2='34.249' y1='48.404' y2='19.425' gradientUnits='userSpaceOnUse'><stop offset='0' stop-color='%237dffce'></stop><stop offset='1' stop-color='%2350c08d'></stop></linearGradient><path fill='url(%23SVGID_00000140728474547789280440000018204366184369975479__sH0rW2TvYdr9_gr2)' d='M24,18.4v23.7c0,1.8,2.4,2.6,3.5,1.2 l16.4-20.7c1.3-1.7,0.1-4.1-2.1-4.1H24z'></path></g></svg>",
+    logo: "data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='100' height='100' viewBox='0 0 48 48'><g id='Ð¡Ð»Ð¾Ð¹_1'><linearGradient id='SVGID_1__sH0rW2TvYdr9_gr1' x1='14.073' x2='14.073' y1='8.468' y2='36.033' gradientUnits='userSpaceOnUse'><stop offset='0' stop-color='%237dffce'></stop><stop offset='1' stop-color='%2350c08d'></stop></linearGradient><path fill='url(%23SVGID_1__sH0rW2TvYdr9_gr1)' d='M24.2,30V6.3c0-1.8-2.3-2.6-3.908-1.007C17.345,5.893,16.677,6.3,16,6.3 c-1.8,0-2.6,0.8-3.4,1.2C11.3,8.4,10.6,9.6,10.6,10.8v24.4c0,1.8,0.8,2.6,1.2,3.4c0.8,1.6,2.2,2.4,3.4,2.4 c0.677,0,1.345-0.407,1.792-1.007C22.2,34.6,24.2,32.6,24.2,30z'></path><linearGradient id='SVGID_00000140728474547789280440000018204366184369975479__sH0rW2TvYdr9_gr2' x1='34.249' x2='34.249' y1='48.404' y2='19.425' gradientUnits='userSpaceOnUse'><stop offset='0' stop-color='%237dffce'></stop><stop offset='1' stop-color='%2350c08d'></stop></linearGradient><path fill='url(%23SVGID_00000140728474547789280440000018204366184369975479__sH0rW2TvYdr9_gr2)' d='M24,18.4v23.7c0,1.8,2.4,2.6,3.5,1.2 l16.4-20.7c1.3-1.7,0.1-4.1-2.1-4.1H24z'></path></g></svg>",
     title: "C++",
   },
   {

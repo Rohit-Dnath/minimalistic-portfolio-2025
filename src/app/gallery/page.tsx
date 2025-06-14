@@ -42,11 +42,11 @@ export default function Gallery() {
           </AnimateIn>          <AnimateIn variant="fadeUp" delay={0.4}>
             <div className="text-left mb-12">
               <div className="flex items-center gap-3 mb-4">
-                <h1 className="text-3xl font-bold tracking-tight">Gallery</h1>
+                <h1 className="text-3xl font-bold tracking-tight">Random Awesomeness</h1>
               </div>
-              <h2 className="text-2xl text-zinc-600 dark:text-zinc-400 font-medium">
+              {/* <h2 className="text-2xl text-zinc-600 dark:text-zinc-400 font-medium">
                 Random Awesomeness
-              </h2>
+              </h2> */}
               <p className="text-lg text-zinc-500 dark:text-zinc-500 mt-4 max-w-xl">
                 A collection of moments, memories, and random captures from my journey
               </p>
