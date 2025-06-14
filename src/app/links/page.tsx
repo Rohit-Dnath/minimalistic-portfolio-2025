@@ -62,8 +62,8 @@ export default function Links() {
 
       <AnimateIn variant="fadeUp" delay={0.8} className="">
         <footer className="pt-4 text-xs text-zinc-400 dark:text-zinc-500 flex justify-between items-center">
-          <div>ahmet.studio</div>
-          <div>Built with Next.js</div>
+          <div>Rohit Debnath</div>
+          <div>Built with 🤍</div>
         </footer>
       </AnimateIn>
     </main>
@@ -72,38 +72,38 @@ export default function Links() {
 
 const projectLinks = [
   {
-    name: "ossdotnow",
-    url: "https://oss.now",
+    name: "lolurl.site",
+    url: "https://lolurl.site",
   },
   {
-    name: "Zero/0.email",
-    url: "https://0.email",
+    name: "Parakrama Card Battle Game",
+    url: "https://parakrama-card-game.vercel.app/",
   },
   {
-    name: "ui.ahmet.studio",
-    url: "https://ui.ahmet.studio",
+    name: "Error HTTP Cats",
+    url: "https://error-cat-rohitdnath-project.netlify.app/",
   },
 ];
 
 const socialLinks = [
   {
     name: "Portfolio",
-    url: "https://dub.sh/ahmet",
+    url: "https://lolurl.site/rohit-portfolio",
   },
   {
     name: "GitHub",
-    url: "https://dub.sh/ahmetgh",
+    url: "https://lolurl.site/rohitgh",
   },
   {
     name: "X",
-    url: "https://dub.sh/ahmetx",
+    url: "https://lolurl.site/rohitx",
   },
   {
     name: "LinkedIn",
-    url: "https://dub.sh/ahmetli",
+    url: "https://lolurl.site/rohitli",
   },
   {
     name: "Instagram",
-    url: "https://dub.sh/ahmetig",
+    url: "https://lolurl.site/rohitig",
   },
 ];
