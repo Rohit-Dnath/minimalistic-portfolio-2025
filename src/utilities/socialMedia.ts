@@ -17,7 +17,7 @@ const socialMediaLinks = [
   },
   {
     name: "instagram",
-    link: "https://lolurl.site/rohitig",
+    link: "https://lolurl.site/rohitIG",
   },
 ];
 

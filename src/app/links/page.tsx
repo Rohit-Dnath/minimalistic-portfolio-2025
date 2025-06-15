@@ -109,6 +109,6 @@ const socialLinks = [
   },
   {
     name: "Instagram",
-    url: "https://lolurl.site/rohitig",
+    url: "https://lolurl.site/rohitIG",
   },
 ];
