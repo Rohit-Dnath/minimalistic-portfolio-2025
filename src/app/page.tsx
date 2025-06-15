@@ -401,7 +401,7 @@ export default function Home() {
       </AnimateIn>
       <AnimateIn variant="fadeUp" delay={1.2}>        <footer className="pt-4 text-xs text-zinc-400 dark:text-zinc-500 flex justify-between items-center">
           <Link href="#" className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors flex items-center gap-2">
-            rohitdebnat.me
+            rohitdebnath.me
             {/* <ArrowUpRight className="w-3 h-3 transform rotate-12" /> */}
           </Link>
             <div 
