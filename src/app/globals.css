@@ -315,3 +315,69 @@
   border-image: linear-gradient(90deg, rgba(59, 130, 246, 0.3), rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.3)) 1;
   animation: border-glow 6s ease-in-out infinite;
 }
+
+/* Dynamic Footer Lighting Effects */
+@keyframes light-sweep-1 {
+  0% {
+    transform: translateY(-50%) translateX(-100%) scaleX(0);
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(-50%) scaleX(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(50%) scaleX(1);
+  }
+  100% {
+    transform: translateY(-50%) translateX(200%) scaleX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes light-sweep-2 {
+  0% {
+    transform: translateY(-50%) translateX(100%) scaleX(0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(50%) scaleX(1);
+  }
+  85% {
+    opacity: 1;
+    transform: translateY(-50%) translateX(-50%) scaleX(1);
+  }
+  100% {
+    transform: translateY(-50%) translateX(-200%) scaleX(0);
+    opacity: 0;
+  }
+}
+
+@keyframes light-pulse {
+  0% {
+    opacity: 0.3;
+    transform: translateX(-50%) translateY(-50%) scale(0.8);
+  }
+  50% {
+    opacity: 0.6;
+    transform: translateX(-50%) translateY(-50%) scale(1.1);
+  }
+  100% {
+    opacity: 0.3;
+    transform: translateX(-50%) translateY(-50%) scale(0.8);
+  }
+}
+
+.animate-light-sweep-1 {
+  animation: light-sweep-1 4s ease-in-out infinite;
+}
+
+.animate-light-sweep-2 {
+  animation: light-sweep-2 5s ease-in-out infinite 1s;
+}
+
+.animate-light-pulse {
+  animation: light-pulse 3s ease-in-out infinite;
+}

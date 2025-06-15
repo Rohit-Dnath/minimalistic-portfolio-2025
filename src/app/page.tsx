@@ -450,20 +450,29 @@ export default function Home() {
             </div>
           </AnimateIn>
         </section>
-      </AnimateIn>
-      <AnimateIn variant="fadeUp" delay={1.2}>
+      </AnimateIn>      <AnimateIn variant="fadeUp" delay={1.2}>
         {" "}
-        <footer className="pt-4 text-xs text-zinc-400 dark:text-zinc-500 flex justify-between items-center">
+        <footer className="pt-4 text-xs text-zinc-400 dark:text-zinc-500 flex justify-between items-center relative">
+          {/* Dynamic Lighting Effect */}
+          <div className="absolute inset-0 pointer-events-none overflow-hidden">
+            {/* Primary light beam */}
+            <div className="absolute left-1/4 top-1/2 w-32 h-8 -translate-y-1/2 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent dark:via-blue-500/15 blur-sm animate-light-sweep-1"></div>
+            {/* Secondary light beam */}
+            <div className="absolute right-1/4 top-1/2 w-28 h-6 -translate-y-1/2 bg-gradient-to-l from-transparent via-purple-400/15 to-transparent dark:via-purple-500/10 blur-sm animate-light-sweep-2"></div>
+            {/* Ambient glow */}
+            <div className="absolute left-1/2 top-1/2 w-64 h-12 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-pink-400/10 to-transparent dark:via-pink-500/8 blur-md animate-light-pulse"></div>
+          </div>
+          
           <Link
             href="#"
-            className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors flex items-center gap-2"
+            className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors flex items-center gap-2 relative z-10"
           >
             rohitdebnath.me
             {/* <ArrowUpRight className="w-3 h-3 transform rotate-12" /> */}
           </Link>
           <div
             onClick={handleHeartRain}
-            className="cursor-pointer hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors select-none hover:scale-105 transform duration-200"
+            className="cursor-pointer hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors select-none hover:scale-105 transform duration-200 relative z-10"
             title="Click for some love rain!"
           >
             Built with <span className="text-lg">♥</span>
