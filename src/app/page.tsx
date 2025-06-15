@@ -83,7 +83,7 @@ export default function Home() {
                     style={{borderRadius: '8px'}} 
                     src="https://open.spotify.com/embed/track/6J9OBBRpR4JZqUkewgDjsS?utm_source=generator&theme=0" 
                     width="100%" 
-                    height="100" 
+                    height="152" 
                     frameBorder="0" 
                     allowFullScreen 
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" 
