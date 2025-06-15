@@ -1,7 +1,6 @@
 "use client";
 
 import SocialMedia from "@/components/SocialMedia";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { AnimateIn } from "@/components/animations/AnimateIn";
 import { Tooltip } from "@/components/Tooltip";
 import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
@@ -104,22 +103,19 @@ export default function Home() {
               </div>
             </div>
           </AnimateIn>
-        </section>
-        <section className="mb-12">
-          <AnimateIn variant="fadeUp" delay={0.2}>
-            <h1 className="text-xl font-medium tracking-tight mb-8 flex items-baseline justify-between">
+        </section>        <section className="mb-10">          <AnimateIn variant="fadeUp" delay={0.2}>
+            <h1 className="text-xl font-medium tracking-tight mb-3">
               <span>Hey, I&apos;m Rohit ᯓᡣ𐭩</span>
-              <ThemeToggle />
             </h1>
           </AnimateIn>
           <AnimateIn variant="fadeUp" delay={0.4}>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-xl mb-6">
+            <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-xl mb-5">
               Full stack developer building scalable SaaS products and web apps.
               4x hackathon winner, freelancer, and dev community leader
               passionate about impactful tech.
             </p>
           </AnimateIn>{" "}          <AnimateIn variant="fadeUp" delay={0.5}>
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2 mb-5">
               <Tooltip content="Some of my Random awesome memories">
                 <Link
                   href="/gallery"
@@ -172,11 +168,10 @@ export default function Home() {
             </div>
           </AnimateIn>{" "}
         </section>
-      </AnimateIn>
-      <AnimateIn variant="fadeUp" delay={0.2}>
-        <section className="mb-12">
+      </AnimateIn>      <AnimateIn variant="fadeUp" delay={0.2}>
+        <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.25}>
-            <h2 className="text-lg font-medium tracking-tight mb-4 inline-block">
+            <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
               Education▼
             </h2>
           </AnimateIn>
@@ -199,11 +194,10 @@ export default function Home() {
             </AnimateIn>
           </div>
         </section>
-      </AnimateIn>
-      <AnimateIn variant="fadeUp" delay={0.3}>
-        <section className="mb-12">
+      </AnimateIn>      <AnimateIn variant="fadeUp" delay={0.3}>
+        <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.35}>
-            <h2 className="text-lg font-medium tracking-tight mb-4 inline-block">
+            <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
               Projects▼
             </h2>
           </AnimateIn>
@@ -282,11 +276,10 @@ export default function Home() {
             )}
           </div>
         </section>
-      </AnimateIn>{" "}
-      <AnimateIn variant="fadeUp" delay={0.4}>
-        <section className="mb-12">
+      </AnimateIn>{" "}      <AnimateIn variant="fadeUp" delay={0.4}>
+        <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.45}>
-            <h2 className="text-lg font-medium tracking-tight mb-4 inline-block">
+            <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
               Experience▼
             </h2>
           </AnimateIn>
@@ -350,11 +343,10 @@ export default function Home() {
             )}
           </div>
         </section>
-      </AnimateIn>{" "}
-      <AnimateIn variant="fadeUp" delay={0.6}>
-        <section className="mb-12">
+      </AnimateIn>{" "}      <AnimateIn variant="fadeUp" delay={0.6}>
+        <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.65}>
-            <h2 className="text-lg font-medium tracking-tight mb-4 inline-block">
+            <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
               Tools & Stack▼
             </h2>
           </AnimateIn>
@@ -383,11 +375,10 @@ export default function Home() {
             ))}
           </div>
         </section>
-      </AnimateIn>{" "}
-      <AnimateIn variant="fadeUp" delay={0.8}>
-        <section className="mb-12">
+      </AnimateIn>{" "}      <AnimateIn variant="fadeUp" delay={0.8}>
+        <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.85}>
-            <h2 className="text-lg font-medium tracking-tight mb-4 inline-block">
+            <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
               Achievements▼
             </h2>
           </AnimateIn>
@@ -417,12 +408,11 @@ export default function Home() {
             ))}
           </div>
         </section>
-      </AnimateIn>{" "}
-      <AnimateIn variant="fadeUp" delay={1.0}>
-        <section className="mb-12">
+      </AnimateIn>{" "}      <AnimateIn variant="fadeUp" delay={1.0}>
+        <section className="mb-8">
           <AnimateIn variant="reveal" delay={1.05}>
             <div className="text-center">
-              <h2 className="text-2xl sm:text-2xl font-bold tracking-tight mb-4">
+              <h2 className="text-2xl sm:text-2xl font-bold tracking-tight mb-3">
                 Get in Touch
               </h2>
               <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-md mx-auto">

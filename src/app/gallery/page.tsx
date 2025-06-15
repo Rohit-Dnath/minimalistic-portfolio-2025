@@ -1,7 +1,6 @@
 "use client";
 
 import { AnimateIn } from "@/components/animations/AnimateIn";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { ArrowUpRight, ArrowLeft } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -26,9 +25,8 @@ export default function Gallery() {
   return (
     <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-4 py-4 mt-4">
       <AnimateIn variant="fadeUp">
-        <section className="mb-12">
-          <AnimateIn variant="fadeUp" delay={0.2}>
-            <div className="flex items-center justify-between mb-8">
+        <section className="mb-12">          <AnimateIn variant="fadeUp" delay={0.2}>
+            <div className="mb-8">
               <Link 
                 href="/"
                 className="flex items-center gap-2 text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-800 dark:hover:text-zinc-200 transition-colors"
@@ -37,9 +35,8 @@ export default function Gallery() {
                 <span className="hidden sm:inline">Back to Home</span>
                 <span className="sm:hidden">Back</span>
               </Link>
-              <ThemeToggle />
             </div>
-          </AnimateIn>          <AnimateIn variant="fadeUp" delay={0.4}>
+          </AnimateIn><AnimateIn variant="fadeUp" delay={0.4}>
             <div className="text-left mb-12">
               <div className="flex items-center gap-3 mb-4">
                 <h1 className="text-3xl font-bold tracking-tight">Random Awesomeness</h1>
