@@ -138,22 +138,47 @@ export default function Home() {
             <div className="flex items-center gap-5">
               <SocialMedia />
             </div>
-          </AnimateIn>
-        </section>
+          </AnimateIn>        </section>
       </AnimateIn>
 
       <AnimateIn variant="fadeUp" delay={0.2}>
         <section className="mb-12">
-          <AnimateIn variant="reveal" delay={0.3}>
+          <AnimateIn variant="reveal" delay={0.25}>
+            <h2 className="text-lg font-medium tracking-tight mb-4 inline-block">
+              Education▼
+            </h2>
+          </AnimateIn>
+          <div className="space-y-6">
+            <AnimateIn variant="fadeLeft" delay={0.3}>
+              <div className="group hover:translate-x-1 transition-all duration-300 ease-out">
+                <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
+                  <h3 className="text-md font-medium">
+                    Bachelor of Technology in Computer Science & Engineering (AI/ML)
+                  </h3>
+                  <span className="text-xs text-zinc-400 dark:text-zinc-500">
+                    2023 - 2027
+                  </span>
+                </div>
+                <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+                  JIS College of Engineering, Kalyani, West Bengal
+                </p>
+              </div>
+            </AnimateIn>
+          </div>
+        </section>
+      </AnimateIn>
+
+      <AnimateIn variant="fadeUp" delay={0.3}>
+        <section className="mb-12">
+          <AnimateIn variant="reveal" delay={0.35}>
             <h2 className="text-lg font-medium tracking-tight mb-4 inline-block">
               Projects▼
             </h2>
           </AnimateIn>
           <div className="space-y-8">
             <ul className="space-y-8">
-              {visibleProjects.map((project, index) => {
-                // const delay = 0.3 + (index < initialProjectCount ? index : index - initialProjectCount) * 0.1;
-                const delay = 0.3 + index * 0.1;
+              {visibleProjects.map((project, index) => {                // const delay = 0.3 + (index < initialProjectCount ? index : index - initialProjectCount) * 0.1;
+                const delay = 0.35 + index * 0.1;
                 return (
                   <AnimateIn key={index} variant="fadeLeft" delay={delay}>
                     <li className="group hover:translate-x-1 transition-all duration-300 ease-out">
@@ -218,23 +243,19 @@ export default function Home() {
                   </>
                 )}
               </button>
-            )} */}
-          </div>
+            )} */}          </div>
         </section>
-      </AnimateIn>
-
-      <AnimateIn variant="fadeUp" delay={0.4}>
+      </AnimateIn>      <AnimateIn variant="fadeUp" delay={0.4}>
         <section className="mb-12">
-          <AnimateIn variant="reveal" delay={0.5}>
+          <AnimateIn variant="reveal" delay={0.45}>
             <h2 className="text-lg font-medium tracking-tight mb-4 inline-block">
               Experience▼
             </h2>
           </AnimateIn>
           <div className="space-y-8">
             <ul className="space-y-8">
-              {visibleExperience.map((job, index) => {
-                const delay =
-                  0.5 +
+              {visibleExperience.map((job, index) => {                const delay =
+                  0.45 +
                   (index < initialExperienceCount
                     ? index
                     : index - initialExperienceCount) *
@@ -290,18 +311,16 @@ export default function Home() {
             )}
           </div>
         </section>
-      </AnimateIn>
-
-      <AnimateIn variant="fadeUp" delay={0.6}>
+      </AnimateIn>      <AnimateIn variant="fadeUp" delay={0.6}>
         <section className="mb-12">
-          <AnimateIn variant="reveal" delay={0.7}>
+          <AnimateIn variant="reveal" delay={0.65}>
             <h2 className="text-lg font-medium tracking-tight mb-4 inline-block">
               Tools & Stack▼
             </h2>
           </AnimateIn>
           <div className="grid grid-cols-5 sm:grid-cols-7 gap-y-6 gap-x-4">
             {tools.map(({ logo, title }, index) => (
-              <AnimateIn key={index} variant="scale" delay={0.7 + index * 0.03}>
+              <AnimateIn key={index} variant="scale" delay={0.65 + index * 0.03}>
                 <div className="flex flex-col items-center group">
                   <div className="relative h-6 w-6 sm:h-8 sm:w-8 mb-3 transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1">
                     <Image
@@ -320,18 +339,16 @@ export default function Home() {
             ))}
           </div>
         </section>
-      </AnimateIn>
-
-      <AnimateIn variant="fadeUp" delay={0.8}>
+      </AnimateIn>      <AnimateIn variant="fadeUp" delay={0.8}>
         <section className="mb-12">
-          <AnimateIn variant="reveal" delay={0.9}>
+          <AnimateIn variant="reveal" delay={0.85}>
             <h2 className="text-lg font-medium tracking-tight mb-4 inline-block">
               Achievements▼
             </h2>
           </AnimateIn>
           <div className="space-y-3">
             {achievements.map((achievement, index) => (
-              <AnimateIn key={index} variant="fadeLeft" delay={0.9 + index * 0.1}>
+              <AnimateIn key={index} variant="fadeLeft" delay={0.85 + index * 0.1}>
                 <div className="group hover:translate-x-1 transition-all duration-300 ease-out">
                   <div className="flex items-start gap-3">
                     {/* <div className="text-sm text-zinc-600 dark:text-zinc-400 mt-0.5">
@@ -351,11 +368,9 @@ export default function Home() {
             ))}
           </div>
         </section>
-      </AnimateIn>
-
-      <AnimateIn variant="fadeUp" delay={1.0}>
+      </AnimateIn>      <AnimateIn variant="fadeUp" delay={1.0}>
         <section className="mb-12">
-          <AnimateIn variant="reveal" delay={1.1}>
+          <AnimateIn variant="reveal" delay={1.05}>
             <div className="text-center">
               <h2 className="text-2xl sm:text-2xl font-bold tracking-tight mb-4">
                 Get in Touch
@@ -652,5 +667,13 @@ const achievements = [
   {
     title: "1st Place",
     event: "Won App Development 12 hour Hackathon call App-e-teaser in Our College Tech Fest",
+  },
+];
+
+const education = [
+  {
+    degree: "Bachelor of Technology in Computer Science & Engineering (AI/ML)",
+    institution: "JIS College of Engineering, Kalyani, West Bengal",
+    period: "2023 - 2027",
   },
 ];
