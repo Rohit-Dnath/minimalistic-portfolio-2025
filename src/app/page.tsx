@@ -91,7 +91,7 @@ export default function Home() {
                 <div className="overflow-hidden rounded-lg">
                   <iframe
                     style={{ borderRadius: "8px" }}
-                    src="https://open.spotify.com/embed/track/6J9OBBRpR4JZqUkewgDjsS?utm_source=generator&theme=0"
+                    src="https://open.spotify.com/embed/track/1jEBSDN5vYViJQr78W7jr2?utm_source=generator&theme=0"
                     width="100%"
                     height="152"
                     frameBorder="0"
