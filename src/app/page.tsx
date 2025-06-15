@@ -62,10 +62,9 @@ export default function Home() {
     }
   };  return (
     <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-4 py-4 mt-2">
-      <AnimateIn variant="fadeUp">
-        {/* Spotify Music Section */}        <section className="mb-3">
+      <AnimateIn variant="fadeUp">        {/* Spotify Music Section */}        <section className="mb-3">
           <AnimateIn variant="fadeUp" delay={0.1}>
-            <div className="bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm hover:shadow-lg transition-all duration-300">
+            <div className="relative bg-white dark:bg-zinc-900 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border-glow-effect">
               <div className="pt-3 px-3 pb-2">
                 <div className="flex items-center gap-2">
                   <svg className="w-4 h-4 text-green-500" fill="currentColor" viewBox="0 0 24 24">
