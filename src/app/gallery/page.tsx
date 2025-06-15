@@ -18,6 +18,10 @@ const galleryImages = [
   { src: "/gallery/img8.jpg", alt: "Memory 8" },
   { src: "/gallery/img9.png", alt: "Memory 9" },
   { src: "/gallery/img10.png", alt: "Memory 10" },
+  { src: "/gallery/img11.png", alt: "Memory 11" },
+  { src: "/gallery/img12.png", alt: "Memory 12" },
+  { src: "/gallery/img13.png", alt: "Memory 13" },
+
 ];
 
 export default function Gallery() {
