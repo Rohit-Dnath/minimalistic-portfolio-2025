@@ -24,7 +24,7 @@ const galleryImages = [
 export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   return (
-    <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-4 py-4 mt-16">
+    <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-4 py-4 mt-4">
       <AnimateIn variant="fadeUp">
         <section className="mb-12">
           <AnimateIn variant="fadeUp" delay={0.2}>
