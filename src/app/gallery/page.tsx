@@ -21,6 +21,10 @@ const galleryImages = [
   { src: "/gallery/img11.png", alt: "Memory 11" },
   { src: "/gallery/img12.png", alt: "Memory 12" },
   { src: "/gallery/img13.png", alt: "Memory 13" },
+  { src: "/gallery/img14.png", alt: "Memory 14" },
+  { src: "/gallery/img15.png", alt: "Memory 15" },
+  { src: "/gallery/img16.png", alt: "Memory 16" },
+  { src: "/gallery/img17.png", alt: "Memory 17" },
 
 ];
 
