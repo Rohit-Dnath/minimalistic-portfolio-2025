@@ -8,6 +8,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import confetti from "canvas-confetti";
+import { link } from "fs";
 
 export default function Home() {
   const [isProjectsExpanded, setIsProjectsExpanded] = useState(false);
@@ -487,10 +488,11 @@ const projects = [
     ],
   },
   {
-    title: "CodeResQ",
+    title: "Goosy",
     description:
-      "A VS Code extension that scans code for vulnerabilities, checks complexity, and refactors Python, TypeScript, and JavaScript code in real time.",
-    github: "https://github.com/Rohit-Dnath/CodeResQ",
+      "A VS Code extension that scans code for vulnerabilities, checks complexity, and refactors Python, TypeScript, JavaScript, C++ and Java code in real time.",
+    link: "https://marketplace.visualstudio.com/items?itemName=null0x.goosy",
+    // github: "https://github.com/Rohit-Dnath/Goosy",
     technologies: [
       "TypeScript",
       "JavaScript",
