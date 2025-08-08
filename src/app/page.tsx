@@ -459,13 +459,14 @@ export default function Home() {
             Rohit Debnath
             {/* <ArrowUpRight className="w-3 h-3 transform rotate-12" /> */}
           </Link>
-          <div
-            onClick={handleHeartRain}
-            className="cursor-pointer hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors select-none hover:scale-105 transform duration-200 relative z-10"
-            title="Click for some love rain!"
-          >
-            Built with <span className="text-lg">♥</span>
-          </div>
+          <Tooltip content="Click for some love rain!">
+            <div
+              onClick={handleHeartRain}
+              className="cursor-pointer hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors select-none hover:scale-105 transform duration-200 relative z-10"
+            >
+              Built with <span className="text-lg">♥</span>
+            </div>
+          </Tooltip>
         </footer>
       </AnimateIn>
     </main>
