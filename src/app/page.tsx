@@ -8,7 +8,6 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import confetti from "canvas-confetti";
-import { link } from "fs";
 
 export default function Home() {
   const [isProjectsExpanded, setIsProjectsExpanded] = useState(false);
