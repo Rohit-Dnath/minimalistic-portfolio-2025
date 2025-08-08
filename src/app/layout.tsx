@@ -6,6 +6,7 @@ import { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
 
+
 type Props = {
   children: React.ReactNode;
 };
