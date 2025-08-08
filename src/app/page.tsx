@@ -72,31 +72,32 @@ export default function Home() {
         <section className="mb-3">
           <AnimateIn variant="fadeUp" delay={0.1}>
             <div className="relative bg-white dark:bg-zinc-900 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border-glow-effect">
-              <div className="pt-3 px-3 pb-2">
-                <div className="flex items-center gap-2">
+              <div className="pt-2 px-2 pb-2">
+                <div className="flex items-center gap-2 mb-1">
                   <svg
                     className="w-4 h-4 text-green-500"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
                     <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.84-.179-.84-.66 0-.479.359-.78.719-.84 4.561-1.021 8.52-.621 11.64 1.32.42.18.479.659.301 1.02l-.238.061zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.481.78.241 1.2zm.120-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z" />
-                  </svg>                  <h2 className="text-sm font-medium text-zinc-700 dark:text-zinc-300">
+                  </svg>
+                  <h2 className="text-xs font-medium text-zinc-700 dark:text-zinc-300">
                     Vibing to while I code
                   </h2>
                 </div>
-              </div>
-              <div className="px-2 pb-1">
-                <div className="overflow-hidden rounded-lg">                  <iframe
-                    style={{ borderRadius: "12px" }}
+                <div className="overflow-hidden rounded-md">
+                  <iframe
+                    data-testid="embed-iframe"
+                    style={{ borderRadius: "6px" }}
                     src="https://open.spotify.com/embed/playlist/3dnp38WpvYW4f3EWdoDFej?utm_source=generator&theme=0"
                     width="100%"
-                    height="152"
+                    height="80"
                     frameBorder="0"
                     allowFullScreen
                     allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
                     loading="lazy"
-                    className="w-full"
-                  />
+                    className="w-full min-h-[80px]"
+                  ></iframe>
                 </div>
               </div>
             </div>
