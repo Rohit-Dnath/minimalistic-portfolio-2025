@@ -456,7 +456,7 @@ export default function Home() {
             href="#"
             className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors flex items-center gap-2 relative z-10"
           >
-            rohitdebnath.me
+            Rohit Debnath
             {/* <ArrowUpRight className="w-3 h-3 transform rotate-12" /> */}
           </Link>
           <div
@@ -553,6 +553,21 @@ const projects = [
 
 const experience = [
   {
+    role: "SDE — Part-Time Remote (USA)",
+    company: "sparkmentis.ai",
+    period: "July 2025 - Present",
+    description:
+      "Currently working at Sparkmentis.ai, building an AI-powered student management SaaS platform for colleges and schools. Using Next.js, Tailwind CSS, Prisma, and NeonDB, I develop and maintain scalable services and optimize database performance to ensure the platform seamlessly supports growing user demand.",
+    technologies: [
+      "React",
+      "JavaScript",
+      "Tailwind CSS",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+  },
+  {
     role: "Backend Developer Intern (Remote)",
     company: "Styflowne Finance Services Private Limited",
     period: "Aug 2023 - Jan 2024",
@@ -608,7 +623,7 @@ const experience = [
   },
   {
     role: "Core Member",
-    company: "devdotcom.in",
+    company: "DevDotCommunity",
     period: "Jan 2025 - Present",
     description:
       "I coordinated over 5+ events to foster developer engagement and knowledge sharing within the Community. To enhance the overall event experience, I implemented a structured feedback system, which led to a 25% increase in event satisfaction scores.",
