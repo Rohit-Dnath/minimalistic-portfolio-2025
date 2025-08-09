@@ -553,21 +553,21 @@ const projects = [
 ];
 
 const experience = [
-  {
-    role: "SDE — Part-Time Remote (USA)",
-    company: "sparkmentis.ai",
-    period: "July 2025 - Present",
-    description:
-      "Currently working at Sparkmentis.ai, building an AI-powered student management SaaS platform for colleges and schools. Using Next.js, Tailwind CSS, Prisma, and NeonDB, I develop and maintain scalable services and optimize database performance to ensure the platform seamlessly supports growing user demand.",
-    technologies: [
-      "React",
-      "JavaScript",
-      "Tailwind CSS",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-    ],
-  },
+  // {
+  //   role: "SDE — Part-Time Remote (USA)",
+  //   company: "sparkmentis.ai",
+  //   period: "July 2025 - Present",
+  //   description:
+  //     "Currently working at Sparkmentis.ai, building an AI-powered student management SaaS platform for colleges and schools. Using Next.js, Tailwind CSS, Prisma, and NeonDB, I develop and maintain scalable services and optimize database performance to ensure the platform seamlessly supports growing user demand.",
+  //   technologies: [
+  //     "React",
+  //     "JavaScript",
+  //     "Tailwind CSS",
+  //     "Node.js",
+  //     "Express.js",
+  //     "MongoDB",
+  //   ],
+  // },
   {
     role: "Backend Developer Intern (Remote)",
     company: "Styflowne Finance Services Private Limited",
