@@ -102,14 +102,19 @@ export default function Home() {
               </div>
             </div>
           </AnimateIn>
-        </section>        <section className="mb-10">          <AnimateIn variant="fadeUp" delay={0.2}>
+        </section>{" "}
+        <section className="mb-10">
+          {" "}
+          <AnimateIn variant="fadeUp" delay={0.2}>
             <h1 className="text-xl font-medium tracking-tight mb-3">
               <span>
                 Hey, I&apos;m&nbsp;
                 <Tooltip
                   content={
                     <span className="block p-0 m-0">
-                      <span className="block text-xs text-zinc-900 dark:text-zinc-500 font-semibold mb-1 text-center">That&apos;s me!</span>
+                      <span className="block text-xs text-zinc-900 dark:text-zinc-500 font-semibold mb-1 text-center">
+                        That&apos;s me!
+                      </span>
                       <span className="block rounded-xl overflow-hidden shadow-2xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 animate-fadeInUp">
                         <Image
                           src="/img/me.png"
@@ -128,15 +133,24 @@ export default function Home() {
                 </Tooltip>
                 {/* &nbsp;ᯓᡣ𐭩 */}
               </span>
-  <div className="flex items-center gap-1 mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
-          </span>
-          <span>India</span>
-          <span className="mx-2">•</span>
-          <span>currently grinning at <span className="font-semibold text-green-600 dark:text-green-400">sparkmentis.ai</span></span>
-        </div>
+              <div className="flex items-center gap-1 mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+                </span>
+                <Tooltip content="Kolkata, WB" delay={120}>
+                  <span className="cursor-pointer">India</span>
+                </Tooltip>
+                <span className="mx-2">•</span>
+                <span>
+                  currently grinning at{" "}
+                  <span className="font-semibold text-green-600 dark:text-green-400">
+                    <Tooltip content="Part-Time SDE (Remote – USA)" delay={120}>
+                      <span className="cursor-pointer">sparkmentis.ai</span>
+                    </Tooltip>
+                  </span>
+                </span>
+              </div>
             </h1>
           </AnimateIn>
           <AnimateIn variant="fadeUp" delay={0.4}>
@@ -145,7 +159,8 @@ export default function Home() {
               4x hackathon winner, freelancer, and dev community leader
               passionate about impactful tech.
             </p>
-          </AnimateIn>{" "}          <AnimateIn variant="fadeUp" delay={0.5}>
+          </AnimateIn>{" "}
+          <AnimateIn variant="fadeUp" delay={0.5}>
             <div className="flex items-center gap-2 mb-5">
               <Tooltip content="Some of my Random awesome memories">
                 <Link
@@ -199,7 +214,8 @@ export default function Home() {
             </div>
           </AnimateIn>{" "}
         </section>
-      </AnimateIn>      <AnimateIn variant="fadeUp" delay={0.2}>
+      </AnimateIn>{" "}
+      <AnimateIn variant="fadeUp" delay={0.2}>
         <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.25}>
             <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
@@ -226,7 +242,8 @@ export default function Home() {
             </AnimateIn>
           </div>
         </section>
-      </AnimateIn>      <AnimateIn variant="fadeUp" delay={0.3}>
+      </AnimateIn>{" "}
+      <AnimateIn variant="fadeUp" delay={0.3}>
         <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.35}>
             <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
@@ -308,7 +325,8 @@ export default function Home() {
             )}
           </div>
         </section>
-      </AnimateIn>{" "}      <AnimateIn variant="fadeUp" delay={0.4}>
+      </AnimateIn>{" "}
+      <AnimateIn variant="fadeUp" delay={0.4}>
         <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.45}>
             <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
@@ -375,7 +393,8 @@ export default function Home() {
             )}
           </div>
         </section>
-      </AnimateIn>{" "}      <AnimateIn variant="fadeUp" delay={0.6}>
+      </AnimateIn>{" "}
+      <AnimateIn variant="fadeUp" delay={0.6}>
         <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.65}>
             <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
@@ -407,7 +426,8 @@ export default function Home() {
             ))}
           </div>
         </section>
-      </AnimateIn>{" "}      <AnimateIn variant="fadeUp" delay={0.8}>
+      </AnimateIn>{" "}
+      <AnimateIn variant="fadeUp" delay={0.8}>
         <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.85}>
             <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
@@ -440,7 +460,8 @@ export default function Home() {
             ))}
           </div>
         </section>
-      </AnimateIn>{" "}      <AnimateIn variant="fadeUp" delay={1.0}>
+      </AnimateIn>{" "}
+      <AnimateIn variant="fadeUp" delay={1.0}>
         <section className="mb-8">
           <AnimateIn variant="reveal" delay={1.05}>
             <div className="text-center">
@@ -472,7 +493,8 @@ export default function Home() {
             </div>
           </AnimateIn>
         </section>
-      </AnimateIn>      <AnimateIn variant="fadeUp" delay={1.2}>
+      </AnimateIn>{" "}
+      <AnimateIn variant="fadeUp" delay={1.2}>
         {" "}
         <footer className="pt-4 text-xs text-zinc-400 dark:text-zinc-500 flex justify-between items-center relative">
           {/* Dynamic Lighting Effect */}
@@ -484,7 +506,7 @@ export default function Home() {
             {/* Ambient glow */}
             <div className="absolute left-1/2 top-1/2 w-64 h-12 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-pink-400/10 to-transparent dark:via-pink-500/8 blur-md animate-light-pulse"></div>
           </div>
-          
+
           <Link
             href="#"
             className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors flex items-center gap-2 relative z-10"
@@ -778,7 +800,6 @@ const achievements = [
   },
   {
     title: "1st Place",
-    event:
-      "App-e-teaser - 12 hours Hyperthon",
+    event: "App-e-teaser - 12 hours Hyperthon",
   },
 ];
