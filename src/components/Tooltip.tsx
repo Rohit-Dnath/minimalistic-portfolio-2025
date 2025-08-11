@@ -4,7 +4,7 @@ import { useState, ReactNode } from "react";
 
 interface TooltipProps {
   children: ReactNode;
-  content: string;
+  content: React.ReactNode;
   delay?: number;
 }
 

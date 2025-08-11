@@ -22,6 +22,21 @@ const RootLayout: React.FC<Props> = ({ children }) => {
     <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        {/* Favicon */}
+        <link rel="icon" href="/gallery/me.png" type="image/png" />
+        {/* Open Graph Meta Tags */}
+        <meta property="og:title" content="Rohit Debnath – Portfolio" />
+        <meta property="og:description" content="Minimalistic portfolio of Rohit Dnath – Developer from India." />
+        <meta property="og:image" content="/opengraph-image.jpg" />
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://rohitdebnath.me/" />
+        {/* Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Rohit Debnath – Portfolio" />
+        <meta name="twitter:description" content="Minimalistic portfolio of Rohit Dnath – Developer from India." />
+        <meta name="twitter:image" content="/opengraph-image.png" />
+        <meta name="twitter:site" content="@r0dth" />
+        <meta name="instagram:site" content="@r0dth" />
       </head>
       <body className="font-geist-sans bg-white overscroll-none dark:bg-zinc-900 grid-background">
         <ThemeProvider defaultTheme="system" storageKey="ahmet-theme">
