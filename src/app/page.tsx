@@ -162,7 +162,7 @@ export default function Home() {
           </AnimateIn>{" "}
           <AnimateIn variant="fadeUp" delay={0.5}>
             <div className="flex items-center gap-2 mb-5">
-              <Tooltip content="Some of my Random awesome memories">
+              <Tooltip content="Random awesome memories">
                 <Link
                   href="/gallery"
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-xs font-medium rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200"
