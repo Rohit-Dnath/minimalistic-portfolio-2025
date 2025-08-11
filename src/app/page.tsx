@@ -88,8 +88,8 @@ export default function Home() {
                 <div className="overflow-hidden rounded-md">
                   <iframe
                     data-testid="embed-iframe"
-                    style={{ borderRadius: "6px" }}
-                    src="https://open.spotify.com/embed/playlist/3dnp38WpvYW4f3EWdoDFej?utm_source=generator&theme=0"
+                    style={{ borderRadius: "6px", backgroundColor: "#191414" }}
+                    src="https://open.spotify.com/embed/playlist/3dnp38WpvYW4f3EWdoDFej?utm_source=generator&theme=1"
                     width="100%"
                     height="80"
                     frameBorder="0"

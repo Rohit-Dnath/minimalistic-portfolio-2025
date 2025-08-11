@@ -20,7 +20,7 @@ const GeistMono = Geist_Mono({
 
 const RootLayout: React.FC<Props> = ({ children }) => {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
+  <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         {/* Favicon */}
@@ -39,7 +39,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         <meta name="twitter:site" content="@r0dth" />
         <meta name="instagram:site" content="@r0dth" />
       </head>
-      <body className="font-geist-sans bg-white overscroll-none dark:bg-zinc-900 grid-background">
+  <body className="font-geist-sans bg-zinc-900 text-zinc-100 overscroll-none grid-background dark">
         <ThemeProvider defaultTheme="system" storageKey="ahmet-theme">
           {children}
         </ThemeProvider>
