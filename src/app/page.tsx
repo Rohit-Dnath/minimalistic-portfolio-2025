@@ -603,7 +603,7 @@ const experience = [
     company: "Lane",
     period: "May 2025 - Jun 2025",
     description:
-      "Improved Inlane.in's web app by fixing key bugs and optimizing the backend for smoother performance, while collaborating with teams to enhance scalability and make the platform launch-ready.",
+      "Improved Lane's web app by fixing key bugs and optimizing the backend for smoother performance, while collaborating with teams to enhance scalability and make the platform launch-ready.",
     technologies: [
       "React",
       "Tailwind CSS",
