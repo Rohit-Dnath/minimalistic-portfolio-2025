@@ -104,7 +104,30 @@ export default function Home() {
           </AnimateIn>
         </section>        <section className="mb-10">          <AnimateIn variant="fadeUp" delay={0.2}>
             <h1 className="text-xl font-medium tracking-tight mb-3">
-              <span>Hey, I&apos;m Rohit ᯓᡣ𐭩</span>
+              <span>
+                Hey, I&apos;m&nbsp;
+                <Tooltip
+                  content={
+                    <span className="block p-0 m-0">
+                      <span className="block text-xs text-zinc-900 dark:text-zinc-500 font-semibold mb-1 text-center">That&apos;s me!</span>
+                      <span className="block rounded-xl overflow-hidden shadow-2xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 animate-fadeInUp">
+                        <Image
+                          src="/img/me.png"
+                          alt="Rohit"
+                          width={160}
+                          height={160}
+                          className="object-cover max-w-[40vw] max-h-[40vw] sm:max-w-[120px] sm:max-h-[120px] w-full h-auto rounded-xl"
+                          priority={false}
+                        />
+                      </span>
+                    </span>
+                  }
+                  delay={150}
+                >
+                  <span className="cursor-pointer">Rohit</span>
+                </Tooltip>
+                &nbsp;ᯓᡣ𐭩
+              </span>
         <div className="flex items-center gap-2 mt-1 text-xs text-zinc-500 dark:text-zinc-400">
           <span className="relative flex h-2 w-2">
             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -189,6 +212,7 @@ export default function Home() {
                 <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-1">
                   <h3 className="text-md font-medium">
                     Bachelor of Technology in Computer Science & Engineering
+                    <br />
                     (AI/ML)
                   </h3>
                   <span className="text-xs text-zinc-400 dark:text-zinc-500">
