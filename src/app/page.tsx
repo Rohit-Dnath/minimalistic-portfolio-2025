@@ -105,6 +105,15 @@ export default function Home() {
         </section>        <section className="mb-10">          <AnimateIn variant="fadeUp" delay={0.2}>
             <h1 className="text-xl font-medium tracking-tight mb-3">
               <span>Hey, I&apos;m Rohit ᯓᡣ𐭩</span>
+        <div className="flex items-center gap-2 mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+          <span className="relative flex h-2 w-2">
+            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+            <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
+          </span>
+          <span>India</span>
+          <span className="mx-2">•</span>
+          <span>currently grinning at <span className="font-semibold text-green-600 dark:text-green-400">sparkmentis.ai</span></span>
+        </div>
             </h1>
           </AnimateIn>
           <AnimateIn variant="fadeUp" delay={0.4}>
@@ -725,15 +734,15 @@ const achievements = [
   {
     title: "Grand Finalist",
     event:
-      "Dark Patterns Buster Hackathon 2023 organized by Govt. of India and IIT BHU",
+      "Dark Patterns Buster Hackathon 2023 - organized by Govt. of India and IIT BHU",
   },
   {
     title: "2nd Runner-Up",
-    event: "Trithon Triplets Hackathon 2023 organized by TAT Bhubaneshwar",
+    event: "Trithon Triplets Hackathon 2023 - organized by TAT Bhubaneshwar",
   },
   {
     title: "Consolation Prize",
-    event: "Trithon Triplets Hackathon 2024 organized by TAT Bhubaneshwar",
+    event: "Trithon Triplets Hackathon 2024 - organized by TAT Bhubaneshwar",
   },
   {
     title: "2nd Runner-Up",
@@ -741,11 +750,11 @@ const achievements = [
   },
   {
     title: "1st Place",
-    event: "Binary Hackathon 2025 organized by KGEC",
+    event: "Binary - 36 hours Hackathon 2025",
   },
   {
     title: "1st Place",
     event:
-      "Won App Development 12 hour Hackathon call App-e-teaser in Our College Tech Fest",
+      "App-e-teaser - 12 hours Hyperthon",
   },
 ];
