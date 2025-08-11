@@ -27,7 +27,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         {/* Open Graph Meta Tags */}
         <meta property="og:title" content="Rohit Debnath – Portfolio" />
         <meta property="og:description" content="Minimalistic portfolio of Rohit Dnath – Developer from India." />
-        <meta property="og:image" content="/opengraph-image.jpg" />
+        <meta property="og:image" content="/opengraph-image.png" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://rohitdebnath.me/" />
         {/* Twitter Card Meta Tags */}
