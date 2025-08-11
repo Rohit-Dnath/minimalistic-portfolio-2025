@@ -732,6 +732,10 @@ const achievements = [
     event: "Trithon Triplets Hackathon 2023 organized by TAT Bhubaneshwar",
   },
   {
+    title: "Consolation",
+    event: "Trithon Triplets Hackathon 2024 organized by TAT Bhubaneshwar",
+  },
+  {
     title: "2nd Runner-Up",
     event: "MLH Diversion 2025",
   },
