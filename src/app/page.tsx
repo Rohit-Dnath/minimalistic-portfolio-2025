@@ -129,9 +129,9 @@ export default function Home() {
                   }
                   delay={150}
                 >
-                  <span className="cursor-pointer">Rohit 𖦹</span>
+                  <span className="cursor-pointer">Rohit</span>
                 </Tooltip>
-                {/* &nbsp;ᯓᡣ𐭩 */}
+                &nbsp;𖦹
               </span>
               <div className="flex items-center gap-1 mt-1 text-xs text-zinc-500 dark:text-zinc-400">
                 <span className="relative flex h-2 w-2">
