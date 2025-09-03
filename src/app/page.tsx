@@ -129,7 +129,7 @@ export default function Home() {
                   }
                   delay={150}
                 >
-                  <span className="cursor-pointer">Rohit</span>
+                  <span className="cursor-pointer">Rohit 𖦹</span>
                 </Tooltip>
                 {/* &nbsp;ᯓᡣ𐭩 */}
               </span>
@@ -219,7 +219,7 @@ export default function Home() {
         <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.25}>
             <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
-              Education▼
+              Education     ♯
             </h2>
           </AnimateIn>
           <div className="space-y-6">
@@ -247,7 +247,7 @@ export default function Home() {
         <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.35}>
             <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
-              Projects▼
+              Projects     ♯
             </h2>
           </AnimateIn>
           <div className="space-y-8">
@@ -330,7 +330,7 @@ export default function Home() {
         <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.45}>
             <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
-              Experience▼
+              Experience     ♯
             </h2>
           </AnimateIn>
           <div className="space-y-8">
@@ -398,7 +398,7 @@ export default function Home() {
         <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.65}>
             <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
-              Tools & Stack▼
+              Tools & Stack     ♯
             </h2>
           </AnimateIn>
           <div className="grid grid-cols-5 sm:grid-cols-7 gap-y-6 gap-x-4">
@@ -431,7 +431,7 @@ export default function Home() {
         <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.85}>
             <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
-              Achievements▼
+              Achievements     ♯
             </h2>
           </AnimateIn>
           <div className="space-y-3">
