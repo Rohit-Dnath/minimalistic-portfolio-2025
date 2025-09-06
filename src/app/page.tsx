@@ -185,7 +185,7 @@ export default function Home() {
               </Tooltip>{" "}
               <Tooltip content="Hire me please 🥺">
                 <a
-                  href="https://lolurl.site/resume-jun"
+                  href="https://drive.google.com/file/d/1_XksYnSBCcvPNRD2NWRYX51yQQ9NMMBU/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-blue-300 dark:border-blue-700 text-blue-700 dark:text-blue-400 text-xs font-medium rounded-md hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200"
