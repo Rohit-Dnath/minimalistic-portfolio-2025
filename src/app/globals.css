@@ -132,9 +132,15 @@
 @layer base {
   * {
     @apply border-border outline-ring/50;
+    cursor: url('/smi220.cur'), auto !important;
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  /* Custom cursor for interactive elements */
+  a, button, [role="button"], .cursor-pointer, input[type="submit"], input[type="button"] {
+    cursor: url('/smi220.cur'), pointer !important;
   }
 
   html {
@@ -166,6 +172,28 @@
 
 .animate-float {
   animation: float 6s ease-in-out infinite;
+}
+
+@keyframes tiltFloat {
+  0% {
+    transform: translateY(0px) rotate(-5deg);
+  }
+  25% {
+    transform: translateY(-4px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(0px) rotate(-5deg);
+  }
+  75% {
+    transform: translateY(4px) rotate(-7deg);
+  }
+  100% {
+    transform: translateY(0px) rotate(-5deg);
+  }
+}
+
+.animate-tilt-float {
+  animation: tiltFloat 4s ease-in-out infinite;
 }
 
 @keyframes fadeSlideUp {
