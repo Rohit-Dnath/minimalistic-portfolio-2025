@@ -559,6 +559,16 @@ const projects = [
     ],
   },
   {
+    title: "Akron ORM: One ORM, Every Database",
+    description:
+      "Power your Python applications with clean, type-safe database operations across SQLite, MySQL, PostgreSQL, and MongoDB.",
+    link: "https://akron-website.vercel.app/",
+    github: "https://github.com/AkronORM/Akron",
+    technologies: [
+      "Python",
+    ],
+  },
+  {
     title: "WebNetr",
     description:
       "A browser extension to detect and block dark patterns, helping users avoid online manipulation.",
