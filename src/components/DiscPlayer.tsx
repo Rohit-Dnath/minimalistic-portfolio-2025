@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import { motion, useAnimation } from "framer-motion";
 
 // Global audio instance to persist across route changes
