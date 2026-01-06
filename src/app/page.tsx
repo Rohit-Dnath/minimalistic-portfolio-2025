@@ -3,6 +3,7 @@
 import SocialMedia from "@/components/SocialMedia";
 import { AnimateIn } from "@/components/animations/AnimateIn";
 import { Tooltip } from "@/components/Tooltip";
+import DiscPlayer from "@/components/DiscPlayer";
 import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
@@ -21,6 +22,14 @@ export default function Home() {
   const visibleExperience = isExperienceExpanded
     ? experience
     : experience.slice(0, initialExperienceCount);
+  
+  const [isBannerHovered, setIsBannerHovered] = useState(false);
+  const [discTapped, setDiscTapped] = useState(false);
+  
+  const handleBannerMouseMove = () => {
+    // Mouse move handler for banner hover effect
+  };
+  
   const handleHeartRain = () => {
     const duration = 3000; // 3 seconds
     const animationEnd = Date.now() + duration;
@@ -65,11 +74,108 @@ export default function Home() {
     }
   };
   return (
-    <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-4 py-4 mt-2">
+    <>
+      {/* Navigation Bar */}
+      <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-xl px-4">
+        <div className="backdrop-blur-xl bg-white/70 dark:bg-zinc-900/70 border border-zinc-200/50 dark:border-zinc-800/50 rounded-2xl shadow-lg px-6 py-3">
+          <div className="flex items-center justify-between">
+            <Link href="/" className="text-sm font-bold text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors">
+              <span className="inline-block animate-spin" style={{ animationDuration: '3s' }}>𖦹</span>
+            </Link>
+            <div className="flex items-center gap-8">
+              <Link 
+                href="/" 
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group"
+              >
+                Home
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-zinc-900 dark:bg-zinc-100 transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+              <Link 
+                href="/about" 
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group"
+              >
+                About
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-zinc-900 dark:bg-zinc-100 transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+              <Link 
+                href="/guestbook" 
+                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group"
+              >
+                Guest Book
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-zinc-900 dark:bg-zinc-100 transition-all duration-300 group-hover:w-full"></span>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Banner */}
+      <section className="mt-24 mb-1">
+        <div className="max-w-xl mx-auto px-4">
+          <AnimateIn variant="fadeUp" delay={0.1}>
+            <div 
+              className="relative rounded-2xl overflow-visible border border-zinc-200 dark:border-zinc-800 group cursor-pointer"
+              onMouseEnter={() => setIsBannerHovered(true)}
+              onMouseLeave={() => setIsBannerHovered(false)}
+              onMouseMove={handleBannerMouseMove}
+            >
+              {/* Banner Image */}
+              <div className="relative h-48 sm:h-56">
+                <Image
+                  src="/img/giphy.gif"
+                  alt="Banner"
+                  fill
+                  className={`object-cover rounded-2xl transition-all duration-500 ${isBannerHovered ? 'brightness-[0.85]' : 'brightness-100'}`}
+                  priority
+                  unoptimized
+                />
+                
+              
+               
+              </div>
+              
+              {/* Bat Decoration */}
+              <div className="absolute -top-6 -right-6 w-20 h-20 sm:w-24 sm:h-24 z-10 transform rotate-12 hover:rotate-6 transition-transform duration-300">
+                <Image
+                  src="/img/bat.gif"
+                  alt="Bat"
+                  fill
+                  className="object-contain animate-bounce"
+                  style={{ animationDuration: '3s' }}
+                  priority={false}
+                  unoptimized
+                />
+              </div>
+              
+              {/* Disc Player - Bottom Right */}
+              <div className="absolute -bottom-16 -right-4 w-28 h-28 sm:w-32 sm:h-32 z-10 group/disc">
+                <DiscPlayer
+                  backgroundColor="transparent"
+                  discColor="#333333"
+                  needleDotColor="#FF5588"
+                  discImage="/img/die_smile.webp"
+                  audioFile="song/Die With A Smile-(SambalpuriStar.In).mp3"
+                  onTap={() => setDiscTapped(true)}
+                />
+                {/* Tap Tap Indicator - only shows before first tap */}
+                {!discTapped && (
+                  <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+                    <span className="text-white text-xs font-bold tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] animate-pulse">
+                      Tap Tap
+                    </span>
+                  </div>
+                )}
+              </div>
+            </div>
+          </AnimateIn>
+        </div>
+      </section>
+
+      <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-4 py-4">
       <AnimateIn variant="fadeUp">
         {" "}
         {/* Spotify Music Section */}{" "}
-        <section className="mb-3">
+        {/* <section className="mb-3">
           <AnimateIn variant="fadeUp" delay={0.1}>
             <div className="relative bg-white dark:bg-zinc-900 rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden border-glow-effect">
               <div className="pt-2 px-2 pb-2">
@@ -102,36 +208,17 @@ export default function Home() {
               </div>
             </div>
           </AnimateIn>
-        </section>{" "}
+        </section>{" "} */}
+
         <section className="mb-10">
           {" "}
           <AnimateIn variant="fadeUp" delay={0.2}>
             <h1 className="text-xl font-medium tracking-tight mb-3">
               <span>
                 Hey, I&apos;m&nbsp;
-                <Tooltip
-                  content={
-                    <span className="block p-0 m-0">
-                      <span className="block text-xs text-zinc-900 dark:text-zinc-500 font-semibold mb-1 text-center">
-                        That&apos;s me!
-                      </span>
-                      <span className="block rounded-xl overflow-hidden shadow-2xl border border-zinc-200 dark:border-zinc-700 bg-white dark:bg-zinc-900 animate-fadeInUp">
-                        <Image
-                          src="/img/me.png"
-                          alt="Rohit"
-                          width={160}
-                          height={160}
-                          className="object-cover max-w-[40vw] max-h-[40vw] sm:max-w-[120px] sm:max-h-[120px] w-full h-auto rounded-xl"
-                          priority={false}
-                        />
-                      </span>
-                    </span>
-                  }
-                  delay={150}
-                >
-                  <span className="cursor-pointer">Rohit</span>
-                </Tooltip>
-                &nbsp;<span className="inline-block animate-spin" style={{ animationDuration: '3s' }}>𖦹</span>
+                <span className="">Rohit</span>
+                  &nbsp; <span className="text-orange-500 inline-block animate-pulse" style={{ animationDuration: '3s' }}>(㇏(•̀ᢍ•́)ノ)</span>
+                
               </span>
               <div className="flex items-center gap-1 mt-1 text-xs text-zinc-500 dark:text-zinc-400">
                 <span className="relative flex h-2 w-2">
@@ -145,8 +232,27 @@ export default function Home() {
                 <span>
                   currently grinning at{" "}
                   <span className="font-semibold text-green-600 dark:text-green-400">
-                    <Tooltip content="Part-Time SDE (Remote – USA)" delay={120}>
-                      <span className="cursor-pointer">sparkmentis.ai</span>
+                    <Tooltip
+                      content={
+                        <span className="flex items-center gap-2 px-1.5 py-1">
+                          <span className="relative w-5 h-5 rounded overflow-hidden bg-white flex-shrink-0">
+                            <Image
+                              src="/img/intervue.io_logo.webp"
+                              alt="intervue.io"
+                              width={20}
+                              height={20}
+                              className="object-contain"
+                              priority={false}
+                            />
+                          </span>
+                          <span className="text-xs text-black font-medium whitespace-nowrap">
+                            Intern
+                          </span>
+                        </span>
+                      }
+                      delay={120}
+                    >
+                      <span className="cursor-pointer">intervue.io</span>
                     </Tooltip>
                   </span>
                 </span>
@@ -215,6 +321,7 @@ export default function Home() {
           </AnimateIn>{" "}
         </section>
       </AnimateIn>{" "}
+      
       <AnimateIn variant="fadeUp" delay={0.2}>
         <section className="mb-10">
           <AnimateIn variant="reveal" delay={0.25}>
@@ -525,6 +632,7 @@ export default function Home() {
         </footer>
       </AnimateIn>
     </main>
+    </>
   );
 }
 
@@ -618,21 +726,27 @@ const projects = [
 ];
 
 const experience = [
-  // {
-  //   role: "SDE — Part-Time Remote (USA)",
-  //   company: "sparkmentis.ai",
-  //   period: "July 2025 - Present",
-  //   description:
-  //     "Currently working at Sparkmentis.ai, building an AI-powered student management SaaS platform for colleges and schools. Using Next.js, Tailwind CSS, Prisma, and NeonDB, I develop and maintain scalable services and optimize database performance to ensure the platform seamlessly supports growing user demand.",
-  //   technologies: [
-  //     "React",
-  //     "JavaScript",
-  //     "Tailwind CSS",
-  //     "Node.js",
-  //     "Express.js",
-  //     "MongoDB",
-  //   ],
-  // },
+  {
+    role: "SDE — Part-Time Remote (USA)",
+    company: "sparkmentis.ai",
+    period: "July 2025 - December 2025",
+    description:
+      "Worked at Sparkmentis.ai, building an AI-powered student management SaaS platform for colleges and schools. Using Next.js, Tailwind CSS, Prisma, and NeonDB, I develop and maintain scalable services and optimize database performance to ensure the platform seamlessly supports growing user demand.",
+    technologies: [
+      "React",
+      "TypeScript",
+      "Next.js",
+      "Tailwind CSS",
+      "JavaScript",
+      "Prisma",
+      "Redis",
+      "RAG",
+      "Betterstack",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+    ],
+  },
   {
     role: "Backend Developer Intern (Remote)",
     company: "Styflowne Finance Services Private Limited",
@@ -716,13 +830,9 @@ const tools = [
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/reactrouter/reactrouter-original.svg",
     title: "React Router",
   },
-  {
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg",
-    title: "HTML",
-  },
-  {
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
-    title: "CSS",
+   {
+    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
+    title: "TailwindCSS",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
@@ -741,12 +851,25 @@ const tools = [
     title: "Express.js",
   },
   {
-    logo: "data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='100' height='100' viewBox='0 0 48 48'><path fill='%2300549d' fill-rule='evenodd' d='M22.903,3.286c0.679-0.381,1.515-0.381,2.193,0 c3.355,1.883,13.451,7.551,16.807,9.434C42.582,13.1,43,13.804,43,14.566c0,3.766,0,15.101,0,18.867 c0,0.762-0.418,1.466-1.097,1.847c-3.355,1.883-13.451,7.551-16.807,9.434c-0.679,0.381-1.515,0.381-2.193,0 c-3.355-1.883-13.451-7.551-16.807-9.434C5.418,34.899,5,34.196,5,33.434c0-3.766,0-15.101,0-18.867 c0-0.762,0.418-1.466,1.097-1.847C9.451,10.837,19.549,5.169,22.903,3.286z' clip-rule='evenodd'></path><path fill='%230086d4' fill-rule='evenodd' d='M5.304,34.404C5.038,34.048,5,33.71,5,33.255 c0-3.744,0-15.014,0-18.759c0-0.758,0.417-1.458,1.094-1.836c3.343-1.872,13.405-7.507,16.748-9.38 c0.677-0.379,1.594-0.371,2.271,0.008c3.343,1.872,13.371,7.459,16.714,9.331c0.27,0.152,0.476,0.335,0.66,0.576L5.304,34.404z' clip-rule='evenodd'></path><path fill='%23fff' fill-rule='evenodd' d='M24,10c7.727,0,14,6.273,14,14s-6.273,14-14,14 s-14-6.273-14-14S16.273,10,24,10z M24,17c3.863,0,7,3.136,7,7c0,3.863-3.137,7-7,7s-7-3.137-7-7C17,20.136,20.136,17,24,17z' clip-rule='evenodd'></path><path fill='%230075c0' fill-rule='evenodd' d='M42.485,13.205c0.516,0.483,0.506,1.211,0.506,1.784 c0,3.795-0.032,14.589,0.009,18.384c0.004,0.396-0.127,0.813-0.323,1.127L23.593,24L42.485,13.205z' clip-rule='evenodd'></path><path fill='%23fff' fill-rule='evenodd' d='M31 21H33V27H31zM38 21H40V27H38z' clip-rule='evenodd'></path><path fill='%23fff' fill-rule='evenodd' d='M29 23H35V25H29zM36 23H42V25H36z' clip-rule='evenodd'></path></svg>",
-    title: "C++",
+    logo: "https://res.cloudinary.com/dfibwwpbl/image/upload/v1767724476/redis_rzz7ab.png",
+    title: "Redis",
   },
+    {
+    logo: "https://res.cloudinary.com/dfibwwpbl/image/upload/v1767724611/docker-icon-logo-png_seeklogo-643955_ty3xse.png",
+    title: "Docker",
+  },
+    {
+    logo: "https://res.cloudinary.com/dfibwwpbl/image/upload/v1767724634/prisma-3_epnsmv.svg",
+    title: "Prisma",
+  },
+
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bun/bun-original.svg",
     title: "Bun",
+  },
+  {
+    logo: "https://res.cloudinary.com/dfibwwpbl/image/upload/v1767724661/mysqlworkbench_93532_ypsi83.webp",
+    title: "MySql",
   },
   {
     logo: "data:image/svg+xml;charset=utf-8,<svg xmlns='http://www.w3.org/2000/svg' x='0px' y='0px' width='100' height='100' viewBox='0 0 48 48'><path fill='%235d4037' d='M42,17.3C42,37.8,24,44,24,44S6,37.8,6,17.3c0-2.5,0.2-4.6,0.4-6.3c0.3-2.5,2-4.5,4.4-5.1 C13.9,5,18.8,4,24,4s10.1,1,13.3,1.9c2.4,0.6,4.1,2.7,4.4,5.1C41.8,12.7,42,14.9,42,17.3z'></path><path fill='%234caf50' d='M24,7c4.9,0,9.5,1,12.5,1.8c1.2,0.3,2,1.3,2.2,2.6c0.2,1.9,0.3,3.9,0.3,5.9c0,15.6-11.5,21.9-15,23.4 c-3.5-1.6-15-7.9-15-23.4c0-2,0.1-4,0.3-5.9c0.1-1.3,1-2.3,2.2-2.6C14.5,8,19.1,7,24,7 M24,4c-5.2,0-10.1,1-13.3,1.9 C8.4,6.5,6.6,8.6,6.4,11C6.2,12.7,6,14.9,6,17.3C6,37.8,24,44,24,44s18-6.2,18-26.7c0-2.5-0.2-4.6-0.4-6.3c-0.3-2.5-2-4.5-4.4-5.1 C34.1,5,29.2,4,24,4L24,4z'></path><path fill='%23dcedc8' d='M23 28H25V36H23z'></path><path fill='%234caf50' d='M24,10c0,0-6,5-6,13c0,5.2,3.3,8.5,5,10l1-3l1,3c1.7-1.5,5-4.8,5-10C30,15,24,10,24,10z'></path><path fill='%2381c784' d='M24,10c0,0-6,5-6,13c0,5.2,3.3,8.5,5,10l1-3V10z'></path></svg>",
@@ -763,10 +886,6 @@ const tools = [
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
     title: "Vercel",
-  },
-  {
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original.svg",
-    title: "TailwindCSS",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",

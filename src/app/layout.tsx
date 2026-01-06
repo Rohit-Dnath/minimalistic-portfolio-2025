@@ -39,7 +39,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         <meta name="twitter:site" content="@r0dth" />
         <meta name="instagram:site" content="@r0dth" />
       </head>
-  <body className="font-geist-sans bg-zinc-900 text-zinc-100 overscroll-none grid-background dark">
+  <body className="font-geist-sans bg-zinc-900 text-zinc-100 overscroll-none grid-background">
         <ThemeProvider defaultTheme="system" storageKey="ahmet-theme">
           {children}
         </ThemeProvider>
