@@ -3,6 +3,15 @@
 import { useState, useEffect, useRef } from "react";
 import { motion, useAnimation } from "framer-motion";
 
+// Global audio instance to persist across route changes
+let globalAudioInstance: HTMLAudioElement | null = null;
+let globalIsPlaying = false;
+const listeners: Set<(playing: boolean) => void> = new Set();
+
+function notifyListeners() {
+  listeners.forEach(listener => listener(globalIsPlaying));
+}
+
 interface DiscPlayerProps {
   audioFile?: string;
   backgroundColor?: string;
@@ -20,32 +29,34 @@ export default function DiscPlayer({
   needleDotColor = "#FF5588",
   onTap,
 }: DiscPlayerProps) {
-  const [isPlaying, setIsPlaying] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(globalIsPlaying);
   const [hasStarted, setHasStarted] = useState(false);
-  const audioRef = useRef<HTMLAudioElement | null>(null);
   const needleControls = useAnimation();
 
   useEffect(() => {
-    if (!audioRef.current && audioFile) {
-      audioRef.current = new Audio(audioFile);
-      audioRef.current.loop = true;
-      audioRef.current.addEventListener("ended", () => {
-        setIsPlaying(false);
-      });
-      audioRef.current.addEventListener("error", (e) => {
-        console.error("Audio failed to load:", e);
-        setIsPlaying(false);
-      });
-    } else if (audioRef.current && audioFile) {
-      audioRef.current.src = audioFile;
-    }
-
+    // Subscribe to global state changes
+    const listener = (playing: boolean) => setIsPlaying(playing);
+    listeners.add(listener);
     return () => {
-      if (audioRef.current) {
-        audioRef.current.pause();
-        audioRef.current.src = "";
-      }
+      listeners.delete(listener);
     };
+  }, []);
+
+  useEffect(() => {
+    if (!globalAudioInstance && audioFile) {
+      globalAudioInstance = new Audio(audioFile);
+      globalAudioInstance.loop = true;
+      globalAudioInstance.addEventListener("ended", () => {
+        globalIsPlaying = false;
+        notifyListeners();
+      });
+      globalAudioInstance.addEventListener("error", (e) => {
+        console.error("Audio failed to load:", e);
+        globalIsPlaying = false;
+        notifyListeners();
+      });
+    }
+    // Don't cleanup on unmount to persist across routes
   }, [audioFile]);
 
   const togglePlayback = () => {
@@ -55,20 +66,22 @@ export default function DiscPlayer({
     if (onTap) {
       onTap();
     }
-    if (!audioRef.current && !audioFile) {
+    if (!globalAudioInstance && !audioFile) {
       // Just animate without audio
-      setIsPlaying(!isPlaying);
+      globalIsPlaying = !globalIsPlaying;
+      notifyListeners();
       return;
     }
-    if (audioRef.current && audioFile) {
-      setIsPlaying(!isPlaying);
+    if (globalAudioInstance && audioFile) {
+      globalIsPlaying = !globalIsPlaying;
+      notifyListeners();
     }
   };
 
   useEffect(() => {
     if (isPlaying) {
-      if (audioRef.current && audioFile) {
-        audioRef.current.play().catch(() => {
+      if (globalAudioInstance && audioFile) {
+        globalAudioInstance.play().catch(() => {
           console.error("Failed to play audio");
         });
       }
@@ -77,8 +90,8 @@ export default function DiscPlayer({
         transition: { duration: 1.2, ease: [0.32, 0.72, 0, 1] },
       });
     } else {
-      if (audioRef.current) {
-        audioRef.current.pause();
+      if (globalAudioInstance) {
+        globalAudioInstance.pause();
       }
       needleControls.start({
         rotate: 15,
@@ -127,7 +140,7 @@ export default function DiscPlayer({
             backgroundImage: discImage ? `url(${discImage})` : "none",
             backgroundSize: "cover",
             backgroundPosition: "center",
-            animation: "spin 2s linear infinite",
+            animation: "spin 10s linear infinite",
             animationPlayState: isPlaying ? "running" : "paused",
             boxShadow: "0 4px 20px rgba(0, 0, 0, 0.3), 0 0 0 2px rgba(255, 255, 255, 0.1)",
           }}

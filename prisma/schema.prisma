@@ -1,0 +1,19 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Guestbook {
+  id             Int      @id @default(autoincrement())
+  message        String
+  githubUsername String   @map("github_username")
+  githubName     String?  @map("github_name")
+  githubAvatar   String   @map("github_avatar")
+  createdAt      DateTime @default(now()) @map("created_at")
+
+  @@map("guestbook")
+}

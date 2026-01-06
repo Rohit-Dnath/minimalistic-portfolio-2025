@@ -5,6 +5,7 @@ import { GoogleAnalytics } from "@next/third-parties/google";
 import { Metadata, Viewport } from "next";
 import { ThemeProvider } from "@/components/ThemeProvider";
 import { Analytics } from "@vercel/analytics/react";
+import { SessionProvider } from "next-auth/react";
 
 
 
@@ -40,9 +41,11 @@ const RootLayout: React.FC<Props> = ({ children }) => {
         <meta name="instagram:site" content="@r0dth" />
       </head>
   <body className="font-geist-sans bg-zinc-900 text-zinc-100 overscroll-none grid-background">
-        <ThemeProvider defaultTheme="system" storageKey="ahmet-theme">
-          {children}
-        </ThemeProvider>
+        <SessionProvider>
+          <ThemeProvider defaultTheme="system" storageKey="ahmet-theme">
+            {children}
+          </ThemeProvider>
+        </SessionProvider>
         <GoogleAnalytics gaId="G-M80GLPRQFQ" />
         <Analytics />
       </body>

@@ -154,7 +154,7 @@ export default function Home() {
                   discColor="#333333"
                   needleDotColor="#FF5588"
                   discImage="/img/die_smile.webp"
-                  audioFile="song/Die With A Smile-(SambalpuriStar.In).mp3"
+                  audioFile="/song/Die With A Smile-(SambalpuriStar.In).mp3"
                   onTap={() => setDiscTapped(true)}
                 />
                 {/* Tap Tap Indicator - only shows before first tap */}
@@ -220,6 +220,9 @@ export default function Home() {
                   &nbsp; <span className="text-orange-500 inline-block animate-pulse" style={{ animationDuration: '3s' }}>(㇏(•̀ᢍ•́)ノ)</span>
                 
               </span>
+              
+              <br />
+              
               <div className="flex items-center gap-1 mt-1 text-xs text-zinc-500 dark:text-zinc-400">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -259,6 +262,9 @@ export default function Home() {
               </div>
             </h1>
           </AnimateIn>
+           <span className="text-sm mb-1 text-zinc-500 dark:text-zinc-400 italic">That Boring and Nerdy Guy who loves to build and ship stuffs.</span>
+       
+          &nbsp;
           <AnimateIn variant="fadeUp" delay={0.4}>
             <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-xl mb-5">
               Full stack developer building scalable SaaS products and web apps.
