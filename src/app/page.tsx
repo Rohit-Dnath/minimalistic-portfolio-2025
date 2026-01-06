@@ -689,14 +689,14 @@ const projects = [
     github: "https://github.com/Rohit-Dnath/WebNetr-Anti-Manipulation-Brigade",
     technologies: ["HTML", "CSS", "JavaScript", "Python", "Flask"],
   },
-  {
-    title: "Minimalistic Portfolio Website",
-    description:
-      "A minimalist portfolio website showcasing projects and skills with a clean, responsive design.",
-    link: "https://lolurl.site/rohit-portfolio",
-    github: "https://github.com/Rohit-Dnath/minimalistic-portfolio-2025",
-    technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-  },
+  // {
+  //   title: "Minimalistic Portfolio Website",
+  //   description:
+  //     "A minimalist portfolio website showcasing projects and skills with a clean, responsive design.",
+  //   link: "https://lolurl.site/rohit-portfolio",
+  //   github: "https://github.com/Rohit-Dnath/minimalistic-portfolio-2025",
+  //   technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
+  // },
   {
     title: "Parakrama Card Battle Game",
     description:
