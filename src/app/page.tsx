@@ -648,7 +648,7 @@ const projects = [
     title: "Goosy",
     description:
       "A VS Code extension that scans code for vulnerabilities, checks complexity, and refactors Python, TypeScript, JavaScript, C++ and Java code in real time.",
-    link: "https://marketplace.visualstudio.com/items?itemName=null0x.goosy",
+    link: "https://marketplace.visualstudio.com/items?itemName=goosy.goosy",
     // github: "https://github.com/Rohit-Dnath/Goosy",
     technologies: [
       "TypeScript",

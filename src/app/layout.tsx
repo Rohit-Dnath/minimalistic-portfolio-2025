@@ -24,21 +24,6 @@ const RootLayout: React.FC<Props> = ({ children }) => {
   <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        {/* Favicon */}
-        <link rel="icon" href="/gallery/me.png" type="image/png" />
-        {/* Open Graph Meta Tags */}
-        <meta property="og:title" content="Rohit Debnath – Portfolio" />
-        <meta property="og:description" content="Minimalistic portfolio of Rohit Dnath – Developer from India." />
-        <meta property="og:image" content="/opengraph-image.png" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://rohitdebnath.me/" />
-        {/* Twitter Card Meta Tags */}
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="Rohit Debnath – Portfolio" />
-        <meta name="twitter:description" content="Minimalistic portfolio of Rohit Dnath – Developer from India." />
-        <meta name="twitter:image" content="/opengraph-image.png" />
-        <meta name="twitter:site" content="@r0dth" />
-        <meta name="instagram:site" content="@r0dth" />
       </head>
   <body className="font-geist-sans bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 overscroll-none" style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
         <SessionProvider>
@@ -63,8 +48,36 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL(getUrl),
   title: {
-    default: "Rohit Debnath",
-    template: `%s - Rohit Debnath`,
+    default: "WTF ROHIT",
+    template: `%s - WTF ROHIT`,
   },
   description: "Explore my projects and previous work, or contact me.",
+  icons: {
+    icon: '/img/mai.jpg',
+    shortcut: '/img/mai.jpg',
+    apple: '/img/mai.jpg',
+  },
+  openGraph: {
+    title: 'WTF ROHIT – Portfolio',
+    description: 'Minimalistic portfolio of Rohit Dnath – Developer from India.',
+    url: 'https://rohitdebnath.me/',
+    siteName: 'WTF ROHIT Portfolio',
+    images: [
+      {
+        url: '/img/mai.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'WTF ROHIT',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'WTF ROHIT – Portfolio',
+    description: 'Minimalistic portfolio of Rohit Dnath – Developer from India.',
+    images: ['/img/mai.jpg'],
+    creator: '@r0dth',
+  },
 };
