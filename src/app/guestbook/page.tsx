@@ -66,30 +66,30 @@ export default function GuestbookPage() {
   return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
       {/* Navigation Bar - Same as Home */}
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-xl px-4">
-        <div className="backdrop-blur-xl bg-white/70 dark:bg-zinc-900/70 border border-zinc-200/50 dark:border-zinc-800/50 rounded-2xl shadow-lg px-6 py-3">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="text-sm font-bold text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors">
-              <span className="inline-block animate-spin" style={{ animationDuration: '3s' }}>𖦹</span>
+      <nav className="fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-xl px-1 sm:px-4 mb-4">
+        <div className="backdrop-blur-xl bg-white/70 dark:bg-zinc-900/70 border border-zinc-200/50 dark:border-zinc-800/50 rounded-lg sm:rounded-2xl shadow-lg px-2 sm:px-6 py-1 sm:py-3">
+          <div className="flex items-center justify-between min-h-[32px] sm:min-h-0">
+            <Link href="/" className="text-sm font-bold text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors flex items-center">
+              <span className="inline-block animate-spin" style={{ animationDuration: '6s' }}>𖦹</span>
             </Link>
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8">
               <Link 
                 href="/" 
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group"
+                className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group flex items-center"
               >
                 Home
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-zinc-900 dark:bg-zinc-100 transition-all duration-300 group-hover:w-full"></span>
               </Link>
               <Link 
                 href="/about" 
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group"
+                className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group flex items-center"
               >
                 About
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-zinc-900 dark:bg-zinc-100 transition-all duration-300 group-hover:w-full"></span>
               </Link>
               <Link 
                 href="/guestbook" 
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group"
+                className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group flex items-center"
               >
                 Guest Book
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-zinc-900 dark:bg-zinc-100 transition-all duration-300 group-hover:w-full"></span>
@@ -99,13 +99,13 @@ export default function GuestbookPage() {
         </div>
       </nav>
 
-      <main className="max-w-xl mx-auto px-4 pt-24 pb-16">
+      <main className="max-w-xl mx-auto px-3 sm:px-4 pt-20 sm:pt-20 md:pt-24 pb-12 sm:pb-16">
         {/* Title */}
         <AnimateIn variant="fadeUp">
-          <h1 className="text-4xl md:text-5xl font-bold mb-2">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-2">
             Guest<span className="text-orange-500">book</span>.
           </h1>
-          <p className="text-sm text-zinc-600 dark:text-zinc-400 mb-4">
+          <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 mb-4">
             Write something. Future me will smile.
           </p>
         </AnimateIn>
@@ -209,13 +209,13 @@ export default function GuestbookPage() {
           <AnimateIn variant="fadeUp" delay={0.3}>
             <form onSubmit={handleSubmit} className="mb-12">
               <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
+                <div className="flex items-center gap-2 sm:gap-3">
                   <Image
-                    src={session.user?.image || "/img/die_smile.webp"}
+                    src={session.user?.image || "/img/Banda-Kaam-Ka.webp"}
                     alt="Your avatar"
                     width={40}
                     height={40}
-                    className="rounded-full"
+                    className="rounded-full flex-shrink-0 w-8 h-8 sm:w-10 sm:h-10"
                   />
                   <div>
                     <p className="text-sm font-medium">{session.user?.name || "User"}</p>
@@ -268,13 +268,13 @@ export default function GuestbookPage() {
             <div className="space-y-6">
               {entries.map((entry, index) => (
                 <AnimateIn key={entry.id} variant="fadeLeft" delay={0.5 + index * 0.05}>
-                  <div className="flex gap-4 p-4 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors">
+                  <div className="flex gap-3 sm:gap-4 p-3 sm:p-4 rounded-lg border border-zinc-200 dark:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-900/50 transition-colors">
                     <Image
                       src={entry.githubAvatar}
                       alt={entry.githubUsername}
                       width={48}
                       height={48}
-                      className="rounded-full"
+                      className="rounded-full flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12"
                     />
                     <div className="flex-1">
                       <div className="flex items-baseline gap-2 mb-1">

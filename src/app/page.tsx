@@ -76,30 +76,32 @@ export default function Home() {
   return (
     <>
       {/* Navigation Bar */}
-      <nav className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[90%] max-w-xl px-4">
-        <div className="backdrop-blur-xl bg-white/70 dark:bg-zinc-900/70 border border-zinc-200/50 dark:border-zinc-800/50 rounded-2xl shadow-lg px-6 py-3">
-          <div className="flex items-center justify-between">
-            <Link href="/" className="text-sm font-bold text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors">
-              <span className="inline-block animate-spin" style={{ animationDuration: '3s' }}>𖦹</span>
+      <nav className="fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-xl px-1 sm:px-4 mb-4">
+        <div className="backdrop-blur-xl bg-white/70 dark:bg-zinc-900/70 border border-zinc-200/50 dark:border-zinc-800/50 rounded-lg sm:rounded-2xl shadow-lg px-2 sm:px-6 py-1 sm:py-3">
+          <div className="flex items-center justify-between min-h-[32px] sm:min-h-0">
+            <Link href="/" className="font-bold text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors flex items-center">
+              <span className="inline-block animate-spin text-xl sm:text-lg" style={{ animationDuration: '6s' }}>𖦹</span>
             </Link>
-            <div className="flex items-center gap-8">
+            
+            {/* Navigation Links - Visible on all screens */}
+            <div className="flex items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8">
               <Link 
                 href="/" 
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group"
+                className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group flex items-center"
               >
                 Home
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-zinc-900 dark:bg-zinc-100 transition-all duration-300 group-hover:w-full"></span>
               </Link>
               <Link 
                 href="/about" 
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group"
+                className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group flex items-center"
               >
                 About
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-zinc-900 dark:bg-zinc-100 transition-all duration-300 group-hover:w-full"></span>
               </Link>
               <Link 
                 href="/guestbook" 
-                className="text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group"
+                className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group flex items-center"
               >
                 Guest Book
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-zinc-900 dark:bg-zinc-100 transition-all duration-300 group-hover:w-full"></span>
@@ -110,22 +112,22 @@ export default function Home() {
       </nav>
 
       {/* Hero Banner */}
-      <section className="mt-24 mb-1">
-        <div className="max-w-xl mx-auto px-4">
+      <section className="mt-20 sm:mt-20 md:mt-24 mb-1">
+        <div className="max-w-xl mx-auto px-3 sm:px-4">
           <AnimateIn variant="fadeUp" delay={0.1}>
             <div 
-              className="relative rounded-2xl overflow-visible border border-zinc-200 dark:border-zinc-800 group cursor-pointer"
+              className="relative rounded-xl sm:rounded-2xl overflow-visible border border-zinc-200 dark:border-zinc-800 group cursor-pointer"
               onMouseEnter={() => setIsBannerHovered(true)}
               onMouseLeave={() => setIsBannerHovered(false)}
               onMouseMove={handleBannerMouseMove}
             >
               {/* Banner Image */}
-              <div className="relative h-48 sm:h-56">
+              <div className="relative h-40 xs:h-44 sm:h-52 md:h-56">
                 <Image
                   src="/img/giphy.gif"
                   alt="Banner"
                   fill
-                  className={`object-cover rounded-2xl transition-all duration-500 ${isBannerHovered ? 'brightness-[0.85]' : 'brightness-100'}`}
+                  className={`object-cover rounded-xl sm:rounded-2xl transition-all duration-500 ${isBannerHovered ? 'brightness-[0.85]' : 'brightness-100'}`}
                   priority
                   unoptimized
                 />
@@ -135,32 +137,32 @@ export default function Home() {
               </div>
               
               {/* Bat Decoration */}
-              <div className="absolute -top-6 -right-6 w-20 h-20 sm:w-24 sm:h-24 z-10 transform rotate-12 hover:rotate-6 transition-transform duration-300">
+              <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 z-10 transform rotate-12 hover:rotate-6 transition-transform duration-300">
                 <Image
                   src="/img/bat.gif"
                   alt="Bat"
                   fill
                   className="object-contain animate-bounce"
-                  style={{ animationDuration: '3s' }}
+                  style={{ animationDuration: '6s' }}
                   priority={false}
                   unoptimized
                 />
               </div>
               
               {/* Disc Player - Bottom Right */}
-              <div className="absolute -bottom-16 -right-4 w-28 h-28 sm:w-32 sm:h-32 z-10 group/disc">
+              <div className="absolute -bottom-12 -right-2 sm:-bottom-14 sm:-right-3 md:-bottom-16 md:-right-4 w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 z-10 group/disc">
                 <DiscPlayer
                   backgroundColor="transparent"
                   discColor="#333333"
                   needleDotColor="#FF5588"
-                  discImage="/img/die_smile.webp"
-                  audioFile="/song/Die With A Smile-(SambalpuriStar.In).mp3"
+                  discImage="/img/Banda-Kaam-Ka.webp"
+                  audioFile="/song/Banda_Kaam_Ka.mp3"
                   onTap={() => setDiscTapped(true)}
                 />
                 {/* Tap Tap Indicator - only shows before first tap */}
                 {!discTapped && (
                   <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-                    <span className="text-white text-xs font-bold tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] animate-pulse">
+                    <span className="text-white text-[10px] sm:text-xs font-bold tracking-wider drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] animate-pulse">
                       Tap Tap
                     </span>
                   </div>
@@ -171,7 +173,7 @@ export default function Home() {
         </div>
       </section>
 
-      <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-4 py-4">
+      <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-3 sm:px-4 py-2 sm:py-4">
       <AnimateIn variant="fadeUp">
         {" "}
         {/* Spotify Music Section */}{" "}
@@ -210,20 +212,21 @@ export default function Home() {
           </AnimateIn>
         </section>{" "} */}
 
-        <section className="mb-10">
+        <section className="mb-8 sm:mb-10">
           {" "}
           <AnimateIn variant="fadeUp" delay={0.2}>
-            <h1 className="text-xl font-medium tracking-tight mb-3">
+            <h1 className="text-lg sm:text-xl md:text-2xl font-medium tracking-tight mb-3">
               <span>
                 Hey, I&apos;m&nbsp;
                 <span className="">Rohit</span>
-                  &nbsp; <span className="text-orange-500 inline-block animate-pulse" style={{ animationDuration: '3s' }}>(㇏(•̀ᢍ•́)ノ)</span>
+                  &nbsp; <span className="text-orange-500 inline-block animate-pulse text-base sm:text-lg md:text-xl" style={{ animationDuration: '6s' }}>(㇏(•̀ᢍ•́)ノ)</span>
                 
               </span>
               
               <br />
+              <span className="text-sm text-zinc-500 dark:text-zinc-400 italic font-normal">That Boring and Nerdy Guy who loves to build and ship stuffs.</span>
               
-              <div className="flex items-center gap-1 mt-1 text-xs text-zinc-500 dark:text-zinc-400">
+              <div className="flex flex-wrap items-center gap-1 mt-1 text-[11px] sm:text-xs text-zinc-500 dark:text-zinc-400">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
@@ -231,9 +234,9 @@ export default function Home() {
                 <Tooltip content="Kolkata, WB" delay={120}>
                   <span className="cursor-pointer">India</span>
                 </Tooltip>
-                <span className="mx-2">•</span>
-                <span>
-                  currently grinning at{" "}
+                <span className="mx-1 sm:mx-2">•</span>
+                <span className="flex flex-wrap items-center gap-1">
+                  <span>currently grinning at</span>{" "}
                   <span className="font-semibold text-green-600 dark:text-green-400">
                     <Tooltip
                       content={
@@ -262,25 +265,22 @@ export default function Home() {
               </div>
             </h1>
           </AnimateIn>
-           <span className="text-sm mb-1 text-zinc-500 dark:text-zinc-400 italic">That Boring and Nerdy Guy who loves to build and ship stuffs.</span>
-       
-          &nbsp;
           <AnimateIn variant="fadeUp" delay={0.4}>
-            <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-xl mb-5">
+            <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-xl mb-5 mt-3">
               Full stack developer building scalable SaaS products and web apps.
               4x hackathon winner, freelancer, and dev community leader
               passionate about impactful tech.
             </p>
           </AnimateIn>{" "}
           <AnimateIn variant="fadeUp" delay={0.5}>
-            <div className="flex items-center gap-2 mb-5">
+            <div className="flex items-center gap-3 mb-5">
               <Tooltip content="Random awesome memories">
                 <Link
                   href="/gallery"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-zinc-300 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 text-xs font-medium rounded-md hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-colors duration-200"
+                  className="inline-flex items-center gap-2 px-4 py-2 border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 text-sm font-medium rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-200"
                 >
                   <svg
-                    className="w-3 h-3"
+                    className="w-4 h-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -300,10 +300,10 @@ export default function Home() {
                   href="https://drive.google.com/file/d/1_XksYnSBCcvPNRD2NWRYX51yQQ9NMMBU/view?usp=sharing"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 px-3 py-1.5 border border-blue-300 dark:border-blue-700 text-blue-700 dark:text-blue-400 text-xs font-medium rounded-md hover:bg-blue-50 dark:hover:bg-blue-900/20 transition-colors duration-200"
+                  className="inline-flex items-center gap-2 px-4 py-2 border border-zinc-300 dark:border-zinc-700 text-zinc-900 dark:text-zinc-100 text-sm font-medium rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all duration-200"
                 >
                   <svg
-                    className="w-3 h-3"
+                    className="w-4 h-4"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -321,7 +321,7 @@ export default function Home() {
             </div>
           </AnimateIn>
           <AnimateIn variant="fadeUp" delay={0.6}>
-            <div className="flex items-center gap-5">
+            <div className="flex items-center gap-5 mb-5">
               <SocialMedia />
             </div>
           </AnimateIn>{" "}
@@ -329,7 +329,7 @@ export default function Home() {
       </AnimateIn>{" "}
       
       <AnimateIn variant="fadeUp" delay={0.2}>
-        <section className="mb-10">
+        <section className="mb-8 sm:mb-10">
           <AnimateIn variant="reveal" delay={0.25}>
             <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
               Education     ♯
@@ -357,15 +357,15 @@ export default function Home() {
         </section>
       </AnimateIn>{" "}
       <AnimateIn variant="fadeUp" delay={0.3}>
-        <section className="mb-10">
+        <section className="mb-8 sm:mb-10">
           <AnimateIn variant="reveal" delay={0.35}>
-            <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
+            <h2 className="text-base sm:text-lg font-medium tracking-tight mb-3 inline-block">
               Projects     ♯
             </h2>
           </AnimateIn>
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             {" "}
-            <ul className="space-y-8">
+            <ul className="space-y-6 sm:space-y-8">
               {visibleProjects.map((project, index) => {
                 const delay =
                   isProjectsExpanded && index >= initialProjectCount
@@ -374,9 +374,9 @@ export default function Home() {
                 return (
                   <AnimateIn key={index} variant="fadeLeft" delay={delay}>
                     <li className="group hover:translate-x-1 transition-all duration-300 ease-out">
-                      <div className="flex items-baseline justify-between mb-1">
-                        <h3 className="text-md font-medium">{project.title}</h3>
-                        <div className="flex flex-row gap-2">
+                      <div className="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1 sm:gap-0 mb-1.5 sm:mb-1">
+                        <h3 className="text-sm sm:text-base font-medium">{project.title}</h3>
+                        <div className="flex flex-row gap-2 sm:gap-2">
                           {project.github ? (
                             <a
                               href={project.github}
@@ -399,14 +399,14 @@ export default function Home() {
                           ) : null}
                         </div>
                       </div>
-                      <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-2">
+                      <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 mb-2 leading-relaxed">
                         {project.description}
                       </p>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-1.5 sm:gap-2">
                         {project.technologies.map((tech, techIndex) => (
                           <span
                             key={techIndex}
-                            className="text-xs text-zinc-400 dark:text-zinc-500"
+                            className="text-[11px] sm:text-xs text-zinc-400 dark:text-zinc-500"
                           >
                             {tech}
                             {techIndex < project.technologies.length - 1
@@ -423,7 +423,7 @@ export default function Home() {
             {projects.length > initialProjectCount && (
               <button
                 onClick={() => setIsProjectsExpanded(!isProjectsExpanded)}
-                className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors mx-auto"
+                className="flex items-center gap-2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors mx-auto py-2 px-4 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800/50"
               >
                 {isProjectsExpanded ? (
                   <>
@@ -440,14 +440,14 @@ export default function Home() {
         </section>
       </AnimateIn>{" "}
       <AnimateIn variant="fadeUp" delay={0.4}>
-        <section className="mb-10">
+        <section className="mb-8 sm:mb-10">
           <AnimateIn variant="reveal" delay={0.45}>
-            <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
+            <h2 className="text-base sm:text-lg font-medium tracking-tight mb-3 inline-block">
               Experience     ♯
             </h2>
           </AnimateIn>
-          <div className="space-y-8">
-            <ul className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
+            <ul className="space-y-6 sm:space-y-8">
               {visibleExperience.map((job, index) => {
                 const delay =
                   0.45 +
@@ -491,7 +491,7 @@ export default function Home() {
             {experience.length > initialExperienceCount && (
               <button
                 onClick={() => setIsExperienceExpanded(!isExperienceExpanded)}
-                className="flex items-center gap-2 text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors mx-auto"
+                className="flex items-center gap-2 text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors mx-auto py-2 px-4 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800/50"
               >
                 {isExperienceExpanded ? (
                   <>
@@ -508,46 +508,49 @@ export default function Home() {
         </section>
       </AnimateIn>{" "}
       <AnimateIn variant="fadeUp" delay={0.6}>
-        <section className="mb-10">
+        <section className="mb-8 sm:mb-10">
           <AnimateIn variant="reveal" delay={0.65}>
-            <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
+            <h2 className="text-base sm:text-lg font-medium tracking-tight mb-3 inline-block">
               Tools & Stack     ♯
             </h2>
           </AnimateIn>
-          <div className="grid grid-cols-5 sm:grid-cols-7 gap-y-6 gap-x-4">
+          <div className="grid grid-cols-4 xs:grid-cols-5 sm:grid-cols-6 md:grid-cols-7 gap-y-5 sm:gap-y-6 gap-x-3 sm:gap-x-4">
             {tools.map(({ logo, title }, index) => (
               <AnimateIn
                 key={index}
                 variant="scale"
                 delay={0.65 + index * 0.03}
               >
-                <div className="flex flex-col items-center group">
-                  <div className="relative h-6 w-6 sm:h-8 sm:w-8 mb-3 transition-all duration-300 ease-out group-hover:scale-110 group-hover:-translate-y-1">
-                    <Image
-                      src={logo}
-                      alt={`${title} logo`}
-                      fill
-                      className="object-contain drop-shadow-md"
-                      loading="eager"
-                    />
+                <Tooltip content={title} delay={120}>
+                  <div className="flex flex-col items-center justify-center gap-1.5 sm:gap-2 p-2 sm:p-3 rounded-lg hover:bg-zinc-100 dark:hover:bg-zinc-800/50 transition-all duration-200 cursor-pointer group">
+                    <div className="relative w-10 h-10 sm:w-12 sm:h-12 grayscale hover:grayscale-0 transition-all duration-300 group-hover:scale-110">
+                      <Image
+                        src={logo}
+                        alt={`${title} logo`}
+                        fill
+                        className="object-contain drop-shadow-md"
+                        loading="eager"
+                        unoptimized
+                      />
+                    </div>
+                    <span className="text-[10px] sm:text-xs text-zinc-500 dark:text-zinc-400 group-hover:text-zinc-900 dark:group-hover:text-zinc-100 transition-colors text-center font-medium">
+                      {title}
+                    </span>
                   </div>
-                  <span className="text-xs text-zinc-500 dark:text-zinc-400 text-center whitespace-nowrap">
-                    {title}
-                  </span>
-                </div>
+                </Tooltip>
               </AnimateIn>
             ))}
           </div>
         </section>
       </AnimateIn>{" "}
       <AnimateIn variant="fadeUp" delay={0.8}>
-        <section className="mb-10">
+        <section className="mb-8 sm:mb-10">
           <AnimateIn variant="reveal" delay={0.85}>
-            <h2 className="text-lg font-medium tracking-tight mb-3 inline-block">
+            <h2 className="text-base sm:text-lg font-medium tracking-tight mb-3 inline-block">
               Achievements     ♯
             </h2>
           </AnimateIn>
-          <div className="space-y-3">
+          <div className="space-y-2.5 sm:space-y-3">
             {achievements.map((achievement, index) => (
               <AnimateIn
                 key={index}
@@ -555,19 +558,12 @@ export default function Home() {
                 delay={0.85 + index * 0.1}
               >
                 <div className="group hover:translate-x-1 transition-all duration-300 ease-out">
-                  <div className="flex items-start gap-3">
-                    {/* <div className="text-sm text-zinc-600 dark:text-zinc-400 mt-0.5">
-                      🏆
-                    </div> */}
-                    <div>
-                      <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                        {achievement.title}
-                      </h3>
-                      <p className="text-xs text-zinc-500 dark:text-zinc-400">
-                        {achievement.event}
-                      </p>
-                    </div>
-                  </div>
+                  <h3 className="text-xs sm:text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                    {achievement.title}
+                  </h3>
+                  <p className="text-[11px] sm:text-xs text-zinc-500 dark:text-zinc-400">
+                    {achievement.event}
+                  </p>
                 </div>
               </AnimateIn>
             ))}
@@ -575,13 +571,13 @@ export default function Home() {
         </section>
       </AnimateIn>{" "}
       <AnimateIn variant="fadeUp" delay={1.0}>
-        <section className="mb-8">
+        <section className="mb-6 sm:mb-8">
           <AnimateIn variant="reveal" delay={1.05}>
             <div className="text-center">
-              <h2 className="text-2xl sm:text-2xl font-bold tracking-tight mb-3">
+              <h2 className="text-xl sm:text-2xl font-bold tracking-tight mb-2 sm:mb-3">
                 Get in Touch
               </h2>
-              <p className="text-sm text-zinc-600 dark:text-zinc-400 max-w-md mx-auto">
+              <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 max-w-md mx-auto px-2 leading-relaxed">
                 DM me on{" "}
                 <a
                   href="https://lolurl.site/rohitx"
@@ -609,32 +605,23 @@ export default function Home() {
       </AnimateIn>{" "}
       <AnimateIn variant="fadeUp" delay={1.2}>
         {" "}
-        <footer className="pt-4 text-xs text-zinc-400 dark:text-zinc-500 flex justify-between items-center relative">
-          {/* Dynamic Lighting Effect */}
-          <div className="absolute inset-0 pointer-events-none overflow-hidden">
-            {/* Primary light beam */}
-            <div className="absolute left-1/4 top-1/2 w-32 h-8 -translate-y-1/2 bg-gradient-to-r from-transparent via-blue-400/20 to-transparent dark:via-blue-500/15 blur-sm animate-light-sweep-1"></div>
-            {/* Secondary light beam */}
-            <div className="absolute right-1/4 top-1/2 w-28 h-6 -translate-y-1/2 bg-gradient-to-l from-transparent via-purple-400/15 to-transparent dark:via-purple-500/10 blur-sm animate-light-sweep-2"></div>
-            {/* Ambient glow */}
-            <div className="absolute left-1/2 top-1/2 w-64 h-12 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r from-transparent via-pink-400/10 to-transparent dark:via-pink-500/8 blur-md animate-light-pulse"></div>
-          </div>
-
-          <Link
-            href="#"
-            className="hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors flex items-center gap-2 relative z-10"
-          >
-            Rohit Debnath
-            {/* <ArrowUpRight className="w-3 h-3 transform rotate-12" /> */}
-          </Link>
-          <Tooltip content="Click for some love rain!">
-            <div
-              onClick={handleHeartRain}
-              className="cursor-pointer hover:text-zinc-600 dark:hover:text-zinc-300 transition-colors select-none hover:scale-105 transform duration-200 relative z-10"
+        <footer className="pt-6 sm:pt-8 pb-4 sm:pb-6 border-t border-zinc-200 dark:border-zinc-800 mt-8 sm:mt-12">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
+            <Link
+              href="#"
+              className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
             >
-              Built with <span className="text-lg">♥</span>
-            </div>
-          </Tooltip>
+              Rohit Debnath
+            </Link>
+            <Tooltip content="Click for some love rain!">
+              <div
+                onClick={handleHeartRain}
+                className="cursor-pointer text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
+              >
+                Built with <span className="text-zinc-900 dark:text-zinc-100">♥</span>
+              </div>
+            </Tooltip>
+          </div>
         </footer>
       </AnimateIn>
     </main>
@@ -802,10 +789,18 @@ const experience = [
   {
     role: "Frontend Developer Intern",
     company: "AIRL by Morning Bay Confitech",
-    period: "Jun 2025 - Present",
+    period: "Jun 2025 - Jul 2025",
     description:
-      "I’m leading enterprise client projects, focusing on interactive UI and better user experience. Worked on making the design responsive and faster, which helped reduce load times by 30% and improve engagement. Also teamed up with different departments to make sure everything matched the client’s needs.",
+      "Got scammed with promises of a paid internship. No compensation, no meaningful work. (Honesty over polish.) Taught me about due diligence and written contracts.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "JavaScript"],
+  },
+  {
+    role: "Content Writer",
+    company: "LinkedIn Influencer (Anonymous)",
+    period: "Apr 2025 - May 2025",
+    description:
+      "Got fired from content writing for a famous LinkedIn influencer. (Part 2 of being honest.) This was the wake-up call I needed, realized my strength lies in building tech, not writing about it. Best career redirect ever.",
+    technologies: ["Writing", "LinkedIn", "Content Strategy"],
   },
   {
     role: "Core Member",
@@ -865,7 +860,7 @@ const tools = [
     title: "Docker",
   },
     {
-    logo: "https://res.cloudinary.com/dfibwwpbl/image/upload/v1767724634/prisma-3_epnsmv.svg",
+    logo: "https://res.cloudinary.com/dfibwwpbl/image/upload/v1767821287/prisma_piqldr.png",
     title: "Prisma",
   },
 
@@ -888,10 +883,6 @@ const tools = [
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg",
     title: "PostgreSQL",
-  },
-  {
-    logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
-    title: "Vercel",
   },
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg",
@@ -934,7 +925,7 @@ const achievements = [
     event: "Binary - 36 hours Hackathon 2025",
   },
   {
-    title: "1st Place",
+    title: "1st Place (2023, 2024)",
     event: "App-e-teaser - 12 hours Hyperthon",
   },
 ];

@@ -58,10 +58,13 @@ export function AnimateIn({ children, delay = 0, className = "", variant = "fade
   const getAnimationStyles = () => {
     if (hasAnimated && once) return {};
 
+    const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+    const duration = isMobile ? 800 : 600;
+
     const baseStyles = {
       opacity: isVisible ? 1 : 0,
       transform: "none",
-      transition: `opacity 600ms cubic-bezier(0.16, 1, 0.3, 1), transform 600ms cubic-bezier(0.16, 1, 0.3, 1)`,
+      transition: `opacity ${duration}ms cubic-bezier(0.16, 1, 0.3, 1), transform ${duration}ms cubic-bezier(0.16, 1, 0.3, 1)`,
       transitionDelay: `${delay}s`,
     };
 

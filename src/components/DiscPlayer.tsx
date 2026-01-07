@@ -46,6 +46,12 @@ export default function DiscPlayer({
     if (!globalAudioInstance && audioFile) {
       globalAudioInstance = new Audio(audioFile);
       globalAudioInstance.loop = true;
+      
+      // Set start time to 20 seconds for Banda_Kaam_Ka.mp3
+      if (audioFile.includes('Banda_Kaam_Ka.mp3')) {
+        globalAudioInstance.currentTime = 21;
+      }
+      
       globalAudioInstance.addEventListener("ended", () => {
         globalIsPlaying = false;
         notifyListeners();
