@@ -124,10 +124,10 @@ export default function AboutPage() {
             <div className="space-y-3">
               <div className="group hover:translate-x-1 transition-all duration-300">
                 <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  Acer Predator Helios 16 Gamin Laptop (beast)
+                  Acer Predator Helios 16 Gaming Laptop (beast)
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
-                  16GB DDR5 RAM • 1TB Gen 5 SSD • NVIDIA RTX 40 Series • 165Hz Display
+                  i7 14th Gen HX • 16GB DDR5 RAM • 1TB Gen 5 SSD • NVIDIA RTX 40 Series GPU • 165Hz Display
                 </p>
               </div>
               
@@ -137,6 +137,15 @@ export default function AboutPage() {
                 </h3>
                 <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
                   24&quot; • 180Hz refresh rate for smooth visuals
+                </p>
+              </div>
+
+               <div className="group hover:translate-x-1 transition-all duration-300">
+                <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                  GT-Play Gaming Ergonomic Chair
+                </h3>
+                <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
+                  Ergonomic design for long coding/Gaming sessions
                 </p>
               </div>
               
