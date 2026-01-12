@@ -186,10 +186,10 @@ export default function DiscPlayer({
           initial={{ rotate: 15 }}
           style={{
             position: "absolute",
-            top: "-5%",
-            right: "-20%",
-            width: "50%",
-            transformOrigin: "95% 50%",
+            top: "8%",
+            right: "-15%",
+            width: "55%",
+            transformOrigin: "92% 50%",
             zIndex: 10,
           }}
         >

@@ -4,6 +4,7 @@ import SocialMedia from "@/components/SocialMedia";
 import { AnimateIn } from "@/components/animations/AnimateIn";
 import { Tooltip } from "@/components/Tooltip";
 import DiscPlayer from "@/components/DiscPlayer";
+import Navbar from "@/components/Navbar";
 import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
 import { useState } from "react";
 import Image from "next/image";
@@ -75,41 +76,7 @@ export default function Home() {
   };
   return (
     <>
-      {/* Navigation Bar */}
-      <nav className="fixed top-2 sm:top-4 left-1/2 -translate-x-1/2 z-50 w-[95%] sm:w-[90%] max-w-xl px-1 sm:px-4 mb-4">
-        <div className="backdrop-blur-xl bg-white/70 dark:bg-zinc-900/70 border border-zinc-200/50 dark:border-zinc-800/50 rounded-lg sm:rounded-2xl shadow-lg px-2 sm:px-6 py-1 sm:py-3">
-          <div className="flex items-center justify-between min-h-[32px] sm:min-h-0">
-            <Link href="/" className="font-bold text-zinc-900 dark:text-zinc-100 hover:text-zinc-600 dark:hover:text-zinc-400 transition-colors flex items-center">
-              <span className="inline-block animate-spin text-xl sm:text-lg" style={{ animationDuration: '6s' }}>𖦹</span>
-            </Link>
-            
-            {/* Navigation Links - Visible on all screens */}
-            <div className="flex items-center gap-2 sm:gap-4 md:gap-6 lg:gap-8">
-              <Link 
-                href="/" 
-                className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group flex items-center"
-              >
-                Home
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-zinc-900 dark:bg-zinc-100 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-              <Link 
-                href="/about" 
-                className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group flex items-center"
-              >
-                About
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-zinc-900 dark:bg-zinc-100 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-              <Link 
-                href="/guestbook" 
-                className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors relative group flex items-center"
-              >
-                Guest Book
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-zinc-900 dark:bg-zinc-100 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Navbar />
 
       {/* Hero Banner */}
       <section className="mt-20 sm:mt-20 md:mt-24 mb-1">
@@ -791,15 +758,15 @@ const experience = [
     company: "AIRL by Morning Bay Confitech",
     period: "Jun 2025 - Jul 2025",
     description:
-      "Got scammed with promises of a paid internship. No compensation, no meaningful work. (Honesty over polish.) Taught me about due diligence and written contracts.",
+      "Worked on frontend development using modern web technologies. This experience taught me valuable lessons about professional agreements and the importance of clear communication in work arrangements.",
     technologies: ["Next.js", "TypeScript", "Tailwind CSS", "JavaScript"],
   },
   {
-    role: "Content Writer",
+    role: "Tech Content Writer",
     company: "LinkedIn Influencer (Anonymous)",
     period: "Apr 2025 - May 2025",
     description:
-      "Got fired from content writing for a famous LinkedIn influencer. (Part 2 of being honest.) This was the wake-up call I needed, realized my strength lies in building tech, not writing about it. Best career redirect ever.",
+      "Created content for a LinkedIn influencer, focusing on professional development and tech industry insights. This experience helped me realize my passion lies in building technology rather than writing about it, leading me to focus full-time on software development.",
     technologies: ["Writing", "LinkedIn", "Content Strategy"],
   },
   {
@@ -867,6 +834,10 @@ const tools = [
   {
     logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bun/bun-original.svg",
     title: "Bun",
+  },
+  {
+    logo: "https://res.cloudinary.com/dfibwwpbl/image/upload/v1768252625/Go-Logo_Blue_tcfzo3.png",
+    title: "Go",
   },
   {
     logo: "https://res.cloudinary.com/dfibwwpbl/image/upload/v1767724661/mysqlworkbench_93532_ypsi83.webp",
