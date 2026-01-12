@@ -134,6 +134,26 @@
     @apply border-border outline-ring/50;
     cursor: url('/smi220.cur'), auto !important;
   }
+  
+  /* Custom text selection styles */
+  ::selection {
+    background-color: #ff6900; /* Custom orange background */
+    color: #ffffff; /* White text */
+  }
+  
+  ::-moz-selection {
+    background-color: #ff6900;
+    color: #ffffff;
+  }
+  
+  /* For elements that are already orange, keep the selection orange */
+  .text-orange-500::selection,
+  .hover\:text-orange-500:hover::selection,
+  a[class*="orange"]::selection {
+    background-color: #ff6900;
+    color: #ffffff;
+  }
+  
   html {
     overflow-x: hidden;
     max-width: 100vw;

@@ -288,7 +288,7 @@ export default function Home() {
             </div>
           </AnimateIn>
           <AnimateIn variant="fadeUp" delay={0.6}>
-            <div className="flex items-center gap-5 mb-5">
+            <div className="flex items-center gap-5 mb-3 sm:mb-5">
               <SocialMedia />
             </div>
           </AnimateIn>{" "}
@@ -573,7 +573,7 @@ export default function Home() {
       <AnimateIn variant="fadeUp" delay={1.2}>
         {" "}
         <footer className="pt-6 sm:pt-8 pb-4 sm:pb-6 border-t border-zinc-200 dark:border-zinc-800 mt-8 sm:mt-12">
-          <div className="flex flex-col sm:flex-row justify-between items-center gap-2">
+          <div className="flex flex-wrap justify-between items-center gap-x-4 gap-y-2">
             <Link
               href="#"
               className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"
@@ -687,11 +687,11 @@ const projects = [
 
 const experience = [
   {
-    role: "SDE — Part-Time Remote (USA)",
-    company: "sparkmentis.ai",
+    role: "SDE - Part-Time Remote (USA)",
+    company: "SparkMentis Ai",
     period: "July 2025 - December 2025",
     description:
-      "Worked at Sparkmentis.ai, building an AI-powered student management SaaS platform for colleges and schools. Using Next.js, Tailwind CSS, Prisma, and NeonDB, I develop and maintain scalable services and optimize database performance to ensure the platform seamlessly supports growing user demand.",
+      "Worked at SparkMentis Ai, building an AI-powered student management SaaS platform for colleges and schools. Using Next.js, Tailwind CSS, Prisma, and NeonDB, I develop and maintain scalable services and optimize database performance to ensure the platform seamlessly supports growing user demand.",
     technologies: [
       "React",
       "TypeScript",

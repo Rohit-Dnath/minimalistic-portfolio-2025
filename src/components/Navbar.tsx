@@ -20,7 +20,11 @@ export default function Navbar() {
           >
             <span
               className="inline-block animate-spin text-xl sm:text-lg"
-              style={{ animationDuration: "6s" }}
+              style={{ 
+                animationDuration: "6s",
+                animationPlayState: "running",
+                willChange: "transform"
+              }}
             >
               𖦹
             </span>
