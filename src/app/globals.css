@@ -156,13 +156,17 @@
   
   html {
     overflow-x: hidden;
+    overflow-y: auto;
     max-width: 100vw;
+    height: 100%;
   }
   body {
     @apply bg-background text-foreground;
     /* Prevent horizontal scroll on mobile */
     overflow-x: hidden;
+    overflow-y: auto;
     max-width: 100vw;
+    min-height: 100%;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     word-wrap: break-word;

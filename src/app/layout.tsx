@@ -21,11 +21,11 @@ const GeistMono = Geist_Mono({
 
 const RootLayout: React.FC<Props> = ({ children }) => {
   return (
-  <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
+  <html lang="en" className={`dark ${GeistSans.variable} ${GeistMono.variable}`} suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-  <body className="font-geist-sans bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 overscroll-none" style={{ overflowX: 'hidden', maxWidth: '100vw' }}>
+  <body className="font-geist-sans bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
         <SessionProvider>
           <ThemeProvider defaultTheme="system" storageKey="ahmet-theme">
             {children}
