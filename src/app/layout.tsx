@@ -25,7 +25,7 @@ const RootLayout: React.FC<Props> = ({ children }) => {
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </head>
-  <body className="font-geist-sans bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100">
+  <body className="font-geist-sans bg-white dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100" suppressHydrationWarning>
         <SessionProvider>
           <ThemeProvider defaultTheme="system" storageKey="ahmet-theme">
             {children}

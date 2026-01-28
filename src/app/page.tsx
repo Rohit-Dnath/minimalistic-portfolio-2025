@@ -573,7 +573,7 @@ export default function Home() {
       <AnimateIn variant="fadeUp" delay={1.2}>
         {" "}
         <footer className="pt-6 sm:pt-8 pb-4 sm:pb-6 border-t border-zinc-200 dark:border-zinc-800 mt-8 sm:mt-12">
-          <div className="flex flex-wrap justify-between items-center gap-x-4 gap-y-2">
+          <div className="flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-x-4">
             <Link
               href="#"
               className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-zinc-100 transition-colors"

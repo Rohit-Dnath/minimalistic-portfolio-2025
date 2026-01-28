@@ -7,24 +7,25 @@ import Link from "next/link";
 import { useState } from "react";
 
 const galleryImages = [
-  { src: "/gallery/image.png", alt: "Memory 9" },
-  { src: "/gallery/img1.png", alt: "Memory 1" },
-  { src: "/gallery/img2.png", alt: "Memory 2" },
-  { src: "/gallery/img3.png", alt: "Memory 3" },
-  { src: "/gallery/img4.png", alt: "Memory 4" },
-  { src: "/gallery/img5.png", alt: "Memory 5" },
-  { src: "/gallery/img6.jpg", alt: "Memory 6" },
-  { src: "/gallery/img7.jpg", alt: "Memory 7" },
-  { src: "/gallery/img8.jpg", alt: "Memory 8" },
-  { src: "/gallery/img9.png", alt: "Memory 9" },
-  { src: "/gallery/img10.png", alt: "Memory 10" },
-  { src: "/gallery/img11.png", alt: "Memory 11" },
-  { src: "/gallery/img12.png", alt: "Memory 12" },
-  { src: "/gallery/img13.png", alt: "Memory 13" },
-  { src: "/gallery/img14.png", alt: "Memory 14" },
-  { src: "/gallery/img15.png", alt: "Memory 15" },
-  { src: "/gallery/img16.png", alt: "Memory 16" },
-  { src: "/gallery/img17.png", alt: "Memory 17" },
+  { src: "/gallery/img18.webp", alt: "Memory 18" },
+  { src: "/gallery/image.webp", alt: "Memory 9" },
+  { src: "/gallery/img1.webp", alt: "Memory 1" },
+  { src: "/gallery/img2.webp", alt: "Memory 2" },
+  { src: "/gallery/img3.webp", alt: "Memory 3" },
+  { src: "/gallery/img4.webp", alt: "Memory 4" },
+  { src: "/gallery/img5.webp", alt: "Memory 5" },
+  { src: "/gallery/img6.webp", alt: "Memory 6" },
+  { src: "/gallery/img7.webp", alt: "Memory 7" },
+  { src: "/gallery/img8.webp", alt: "Memory 8" },
+  { src: "/gallery/img9.webp", alt: "Memory 9" },
+  { src: "/gallery/img10.webp", alt: "Memory 10" },
+  { src: "/gallery/img11.webp", alt: "Memory 11" },
+  { src: "/gallery/img12.webp", alt: "Memory 12" },
+  { src: "/gallery/img13.webp", alt: "Memory 13" },
+  { src: "/gallery/img14.webp", alt: "Memory 14" },
+  { src: "/gallery/img15.webp", alt: "Memory 15" },
+  { src: "/gallery/img16.webp", alt: "Memory 16" },
+  { src: "/gallery/img17.webp", alt: "Memory 17" },
 
 ];
 
@@ -57,12 +58,32 @@ export default function Gallery() {
               </p>
             </div>
           </AnimateIn>          <AnimateIn variant="fadeUp" delay={0.6}>
+            {/* Featured Image */}
+            <AnimateIn variant="fadeUp" delay={0.8} className="mb-4">
+              <div 
+                className="group cursor-pointer relative overflow-hidden rounded-lg bg-zinc-100 dark:bg-zinc-800 transition-transform duration-300 hover:scale-[1.01] active:scale-[0.99]"
+                onClick={() => setSelectedImage(galleryImages[0].src)}
+              >
+                <Image
+                  src={galleryImages[0].src}
+                  alt={galleryImages[0].alt}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, 100vw"
+                  priority
+                />
+                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors duration-300 flex items-center justify-center">
+                  <ArrowUpRight className="w-8 h-8 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                </div>
+              </div>
+            </AnimateIn>
             <div className="columns-1 sm:columns-2 gap-4 space-y-4">
-              {galleryImages.map((image, index) => (
+              {galleryImages.slice(1).map((image, index) => (
                 <AnimateIn 
                   key={image.src} 
                   variant="fadeUp" 
-                  delay={0.8 + index * 0.1}
+                  delay={0.9 + index * 0.1}
                   className="break-inside-avoid mb-4"
                 >
                   <div 

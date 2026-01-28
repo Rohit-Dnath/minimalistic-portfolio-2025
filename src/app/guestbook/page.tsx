@@ -32,9 +32,15 @@ export default function GuestbookPage() {
     try {
       const res = await fetch("/api/guestbook");
       const data = await res.json();
-      setEntries(data);
+      if (Array.isArray(data)) {
+        setEntries(data);
+      } else {
+        console.error("API returned non-array:", data);
+        setEntries([]);
+      }
     } catch (error) {
       console.error("Error fetching entries:", error);
+      setEntries([]);
     } finally {
       setLoading(false);
     }
