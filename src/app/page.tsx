@@ -598,23 +598,27 @@ export default function Home() {
               </h2>
               <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 max-w-md mx-auto px-2 leading-relaxed">
                 DM me on{" "}
-                <a
-                  href="https://lolurl.site/rohitx"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
-                >
-                  X (twitter)
-                </a>
+                <Tooltip content="warning: i post cringe sometimes 💀" delay={120}>
+                  <a
+                    href="https://lolurl.site/rohitx"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+                  >
+                    X (twitter)
+                  </a>
+                </Tooltip>
                 {" or "}
-                <a
-                  href="https://lolurl.site/rohitli"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
-                >
-                  LinkedIn
-                </a>{" "}
+                <Tooltip content="yes i do post 'hustle' stuff 🤝 sorry" delay={120}>
+                  <a
+                    href="https://lolurl.site/rohitli"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 transition-colors"
+                  >
+                    LinkedIn
+                  </a>
+                </Tooltip>{" "}
                 if you want to chat or hire me for internship or freelance. No
                 spam I repeat no crypto pitches :D
               </p>

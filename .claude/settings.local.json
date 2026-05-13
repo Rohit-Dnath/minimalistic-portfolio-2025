@@ -1,0 +1,21 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:www.meta.com)",
+      "WebFetch(domain:us.nothing.tech)",
+      "WebFetch(domain:www.amazon.com)",
+      "WebFetch(domain:www.ray-ban.com)",
+      "WebFetch(domain:kz-audio.com)",
+      "WebFetch(domain:www.jbl.com)",
+      "WebFetch(domain:www.lg.com)",
+      "WebFetch(domain:www.acer.com)",
+      "WebFetch(domain:www.harmanaudio.com)",
+      "WebFetch(domain:www.bestbuy.com)",
+      "WebFetch(domain:en.wikipedia.org)",
+      "WebFetch(domain:www.androidcentral.com)",
+      "WebFetch(domain:store.acer.com)",
+      "WebFetch(domain:harmanhouse.com)"
+    ]
+  }
+}

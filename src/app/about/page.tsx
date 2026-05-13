@@ -5,6 +5,64 @@ import Image from "next/image";
 import { AnimateIn } from "@/components/animations/AnimateIn";
 import Navbar from "@/components/Navbar";
 
+const gears = [
+  {
+    name: "Acer Predator Helios 16 Gaming Laptop",
+    specs: "i7 14th Gen HX • 16GB DDR5 RAM • 1TB Gen 5 SSD • NVIDIA RTX 40 Series GPU • 165Hz Display",
+    image: "https://cdn.mos.cms.futurecdn.net/JeECa9xfScb36x7bjJuw9P.jpg",
+  },
+  {
+    name: "LG UltraGear Gaming Monitor",
+    specs: "24\" • 180Hz refresh rate for smooth visuals",
+    image: "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/81bc1837-a838-4058-a550-0a9196dc466d/md07520039-zoom-01-jpg",
+  },
+  {
+    name: "GT-Play Gaming Ergonomic Chair",
+    specs: "Ergonomic design for long coding/gaming sessions",
+    image: "https://in.gtplayer.com/cdn/shop/files/51WUaFNDRDL._SL1080.jpg",
+  },
+  {
+    name: "Portronics Hydra 10 Mechanical Keyboard",
+    specs: "Red switches for that satisfying clicky experience",
+    image: "https://cdn.shopify.com/s/files/1/1603/9553/files/Hydra-10_1200x1200_Red_1.jpg?v=1733832004",
+  },
+  {
+    name: "Portronics Toad One Gaming Mouse",
+    specs: "Precision aiming for both code and gaming",
+    image: "https://cdn.shopify.com/s/files/1/1603/9553/files/Image1_5067bdd1-4473-4933-a66d-edcb4d49409a.png?v=1720258592",
+  },
+  {
+    name: "JBL Tune 520BT Headphones",
+    specs: "For those deep focus coding sessions",
+    image: "https://www.soundguys.com/wp-content/uploads/2024/12/jbl-tune-520BT-hero.jpg",
+  },
+  {
+    name: "KZ EDX Pro IEMs",
+    specs: "Crystal clear audio when I need to tune out the world",
+    image: "https://kz-audio.com/images/kz-edx-pro-img-01.jpg",
+  },
+  {
+    name: "CMF Buds Pro 2",
+    specs: "50dB ANC • 11mm drivers • LDAC • 43H playtime • Smart Dial",
+    image: "https://cdn.sanity.io/images/gtd4w1cq/production/2f7f187714e728295aafbd50d57706a3a9869dd7-4096x2304.jpg?auto=format",
+  },
+  {
+    name: "Meta Ray-Ban Glasses Gen 2",
+    specs: "12MP ultra-wide camera • 8hr battery • Meta AI built-in • Wayfarer style",
+    image: "https://www.engadget.com/engadget/ray-ban-meta-2nd-gen-review-smart-glasses-are-finally-getting-useful-124720393/rayban_meta_gen_2_in_case.jpg",
+  },
+  {
+    name: "Cosmic Byte C3070W Gaming Controller",
+    specs: "Because all work and no play makes me a dull dev",
+    image: "https://rukminim2.flixcart.com/image/832/832/kuh9yfk0/gamepad/wireless-gamepad-for-pc-ps3/u/2/a/eg-c3070w-nebula-cosmicbyte-original-imag7hp4dnzfhgvf.jpeg",
+  },
+  {
+    name: "LEGO Mercedes AMG F1 W14 Model",
+    specs: "Best desk buddy that reminds me to build things piece by piece",
+    image: "https://target.scene7.com/is/image/Target/GUEST_a41ab1c9-072f-4e21-b8af-1e64bdc18338?wid=800&hei=800&fmt=pjpeg",
+  },
+];
+
 export default function AboutPage() {
   const [copied, setCopied] = useState(false);
 
@@ -34,8 +92,8 @@ export default function AboutPage() {
             className="relative w-full aspect-[2/1] max-w-xl mx-auto mb-2 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 cursor-pointer group"
           >
             <Image
-              src="/img/me_with_dog.jpeg"
-              alt="Rohit with dog"
+              src="/gallery/good_pic.jpg"
+              alt="Rohit"
               fill
               className="object-cover object-center grayscale group-hover:grayscale-[50%] transition-all duration-500 group-hover:scale-105"
               priority
@@ -90,86 +148,27 @@ export default function AboutPage() {
               The weapons I use to ship code and build cool stuff
             </p>
             <div className="space-y-3">
-              <div className="group hover:translate-x-1 transition-all duration-300">
-                <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  Acer Predator Helios 16 Gaming Laptop (beast)
-                </h3>
-                <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
-                  i7 14th Gen HX • 16GB DDR5 RAM • 1TB Gen 5 SSD • NVIDIA RTX 40 Series GPU • 165Hz Display
-                </p>
-              </div>
-              
-              <div className="group hover:translate-x-1 transition-all duration-300">
-                <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  LG UltraGear Gaming Monitor
-                </h3>
-                <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
-                  24&quot; • 180Hz refresh rate for smooth visuals
-                </p>
-              </div>
-
-               <div className="group hover:translate-x-1 transition-all duration-300">
-                <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  GT-Play Gaming Ergonomic Chair
-                </h3>
-                <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
-                  Ergonomic design for long coding/Gaming sessions
-                </p>
-              </div>
-              
-              <div className="group hover:translate-x-1 transition-all duration-300">
-                <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  Protronics Hydra 10 Mechanical Keyboard
-                </h3>
-                <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
-                  Red switches for that satisfying clicky experience
-                </p>
-              </div>
-              
-              <div className="group hover:translate-x-1 transition-all duration-300">
-                <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  Protronics Tode One Gaming Mouse
-                </h3>
-                <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
-                  Precision aiming for both code and gaming
-                </p>
-              </div>
-              
-              <div className="group hover:translate-x-1 transition-all duration-300">
-                <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  JBL 520BT Headphones
-                </h3>
-                <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
-                  For those deep focus coding sessions
-                </p>
-              </div>
-              
-              <div className="group hover:translate-x-1 transition-all duration-300">
-                <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  KZ EDX Pro IEMs
-                </h3>
-                <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
-                  Crystal clear audio when I need to tune out the world
-                </p>
-              </div>
-              
-              <div className="group hover:translate-x-1 transition-all duration-300">
-                <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  Cosmic Byte Gaming Controller
-                </h3>
-                <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
-                  Because all work and no play makes me a dull dev
-                </p>
-              </div>
-              
-              <div className="group hover:translate-x-1 transition-all duration-300">
-                <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100">
-                  LEGO Mercedes F1 Car Model
-                </h3>
-                <p className="text-xs sm:text-sm text-zinc-500 dark:text-zinc-400">
-                  Best desk buddy that reminds me to build things piece by piece
-                </p>
-              </div>
+              {gears.map((gear, index) => (
+                <div key={index} className="group flex gap-3 items-center hover:translate-x-1 transition-all duration-300">
+                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
+                    <Image
+                      src={gear.image}
+                      alt={gear.name}
+                      fill
+                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
+                      unoptimized
+                    />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100 leading-tight">
+                      {gear.name}
+                    </h3>
+                    <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 leading-relaxed">
+                      {gear.specs}
+                    </p>
+                  </div>
+                </div>
+              ))}
             </div>
           </section>
         </AnimateIn>
