@@ -6,7 +6,7 @@ import { Tooltip } from "@/components/Tooltip";
 import DiscPlayer from "@/components/DiscPlayer";
 import Navbar from "@/components/Navbar";
 import { ExternalLink, ChevronDown, ChevronUp } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import confetti from "canvas-confetti";
@@ -26,6 +26,10 @@ export default function Home() {
   
   const [isBannerHovered, setIsBannerHovered] = useState(false);
   const [discTapped, setDiscTapped] = useState(false);
+  const [mounted, setMounted] = useState(false);
+  const [profilePhotoOpen, setProfilePhotoOpen] = useState(false);
+
+  useEffect(() => setMounted(true), []);
   
   const handleBannerMouseMove = () => {
     // Mouse move handler for banner hover effect
@@ -103,6 +107,26 @@ export default function Home() {
                
               </div>
               
+              {/* Profile Photo - Inside banner, bottom left */}
+              {mounted && (
+                <div className="absolute bottom-3 left-3 w-16 h-16 sm:w-20 sm:h-20 z-10 animate-tilt-float">
+                  <Tooltip content="i love ducks 🪿" delay={100}>
+                    <div
+                      className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-2xl overflow-hidden border-2 border-white/80 shadow-lg cursor-pointer"
+                      onClick={() => setProfilePhotoOpen(true)}
+                    >
+                      <Image
+                        src="/gallery/good_pic.jpg"
+                        alt="Rohit"
+                        fill
+                        className="object-cover"
+                        priority
+                      />
+                    </div>
+                  </Tooltip>
+                </div>
+              )}
+
               {/* Bat Decoration */}
               <div className="absolute -top-4 -right-4 sm:-top-6 sm:-right-6 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 z-10 transform rotate-12 hover:rotate-6 transition-transform duration-300">
                 <Image
@@ -139,6 +163,34 @@ export default function Home() {
           </AnimateIn>
         </div>
       </section>
+
+      {/* Profile Photo Modal */}
+      {profilePhotoOpen && (
+        <div
+          className="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+          onClick={() => setProfilePhotoOpen(false)}
+        >
+          <div className="relative max-w-xs w-full" onClick={e => e.stopPropagation()}>
+            <button
+              onClick={() => setProfilePhotoOpen(false)}
+              className="absolute -top-4 -right-4 z-10 p-1.5 bg-black/60 rounded-full text-white hover:bg-black/90 transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+            <div className="relative w-full aspect-square rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
+              <Image
+                src="/gallery/good_pic.jpg"
+                alt="Rohit"
+                fill
+                className="object-cover"
+                priority
+              />
+            </div>
+          </div>
+        </div>
+      )}
 
       <main className="text-zinc-900 dark:text-zinc-100 max-w-xl mx-auto px-3 sm:px-4 py-2 sm:py-4">
       <AnimateIn variant="fadeUp">
