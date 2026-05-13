@@ -4,62 +4,80 @@ import { useState } from "react";
 import Image from "next/image";
 import { AnimateIn } from "@/components/animations/AnimateIn";
 import Navbar from "@/components/Navbar";
+import { Tooltip } from "@/components/Tooltip";
 
 const gears = [
   {
-    name: "Acer Predator Helios 16 Gaming Laptop",
-    specs: "i7 14th Gen HX • 16GB DDR5 RAM • 1TB Gen 5 SSD • NVIDIA RTX 40 Series GPU • 165Hz Display",
-    image: "https://cdn.mos.cms.futurecdn.net/JeECa9xfScb36x7bjJuw9P.jpg",
+    name: "Acer Predator Helios 16",
+    specs: "i7 14th Gen HX • 16GB DDR5 • 1TB Gen 5 SSD • RTX 40 Series • 165Hz",
+    image: "/img/gears/laptop.jpg",
+    tooltip: "runs crysis. and my 47 browser tabs 🔥",
   },
   {
     name: "LG UltraGear Gaming Monitor",
-    specs: "24\" • 180Hz refresh rate for smooth visuals",
-    image: "https://media.us.lg.com/transform/ecomm-PDPGallery-1100x730/81bc1837-a838-4058-a550-0a9196dc466d/md07520039-zoom-01-jpg",
+    specs: "24\" • 180Hz • 1ms response time",
+    image: "/img/gears/monitor.jpg",
+    tooltip: "one screen was never enough 🖥️",
   },
   {
-    name: "GT-Play Gaming Ergonomic Chair",
-    specs: "Ergonomic design for long coding/gaming sessions",
-    image: "https://in.gtplayer.com/cdn/shop/files/51WUaFNDRDL._SL1080.jpg",
+    name: "Portronics Hydra 10 Keyboard",
+    specs: "Mechanical • Red switches • Wireless • RGB backlit",
+    image: "/img/gears/keyboard.jpg",
+    tooltip: "clack clack clack... sorry neighbors 😬",
   },
   {
-    name: "Portronics Hydra 10 Mechanical Keyboard",
-    specs: "Red switches for that satisfying clicky experience",
-    image: "https://cdn.shopify.com/s/files/1/1603/9553/files/Hydra-10_1200x1200_Red_1.jpg?v=1733832004",
+    name: "Portronics Toad One Mouse",
+    specs: "Wireless • RGB • 2.4GHz + Bluetooth • Rechargeable",
+    image: "/img/gears/mouse.png",
+    tooltip: "my aim: 2/10. my code: 8/10. balance 🖱️",
   },
   {
-    name: "Portronics Toad One Gaming Mouse",
-    specs: "Precision aiming for both code and gaming",
-    image: "https://cdn.shopify.com/s/files/1/1603/9553/files/Image1_5067bdd1-4473-4933-a66d-edcb4d49409a.png?v=1720258592",
+    name: "GT-Play Ergonomic Chair",
+    specs: "Racing style • lumbar support • built for long sessions",
+    image: "/img/gears/chair.jpg",
+    tooltip: "where great ideas and long naps happen 💺",
   },
   {
-    name: "JBL Tune 520BT Headphones",
-    specs: "For those deep focus coding sessions",
-    image: "https://www.soundguys.com/wp-content/uploads/2024/12/jbl-tune-520BT-hero.jpg",
+    name: "JBL Tune 520BT",
+    specs: "On-ear • Wireless • 57H battery • deep bass",
+    image: "/img/gears/headphones.jpg",
+    tooltip: "universal 'do not disturb' sign 🎧",
   },
   {
     name: "KZ EDX Pro IEMs",
-    specs: "Crystal clear audio when I need to tune out the world",
-    image: "https://kz-audio.com/images/kz-edx-pro-img-01.jpg",
+    specs: "10mm dual-mag driver • HiFi • detachable cable",
+    image: "/img/gears/iems.jpg",
+    tooltip: "₹800 but sounds like ₹8000. no cap 🎵",
   },
   {
     name: "CMF Buds Pro 2",
-    specs: "50dB ANC • 11mm drivers • LDAC • 43H playtime • Smart Dial",
-    image: "https://cdn.sanity.io/images/gtd4w1cq/production/2f7f187714e728295aafbd50d57706a3a9869dd7-4096x2304.jpg?auto=format",
+    specs: "50dB ANC • LDAC • 43H playtime • Smart Dial",
+    image: "/img/gears/buds.jpg",
+    tooltip: "50dB ANC = professionally ignoring people 👂",
   },
   {
-    name: "Meta Ray-Ban Glasses Gen 2",
-    specs: "12MP ultra-wide camera • 8hr battery • Meta AI built-in • Wayfarer style",
-    image: "https://www.engadget.com/engadget/ray-ban-meta-2nd-gen-review-smart-glasses-are-finally-getting-useful-124720393/rayban_meta_gen_2_in_case.jpg",
+    name: "Meta Ray-Ban Gen 2",
+    specs: "12MP camera • 8hr battery • Meta AI • open-ear audio",
+    image: "/img/gears/glasses.jpg",
+    tooltip: "i wear computers on my face. normal guy stuff 🕶️",
   },
   {
-    name: "Cosmic Byte C3070W Gaming Controller",
-    specs: "Because all work and no play makes me a dull dev",
-    image: "https://rukminim2.flixcart.com/image/832/832/kuh9yfk0/gamepad/wireless-gamepad-for-pc-ps3/u/2/a/eg-c3070w-nebula-cosmicbyte-original-imag7hp4dnzfhgvf.jpeg",
+    name: "iPhone 17",
+    specs: "A19 chip • 6.3\" ProMotion • 48MP camera • all-day battery",
+    image: "/img/gears/iphone.jpg",
+    tooltip: "apple tax: paid in full 🍎💸",
   },
   {
-    name: "LEGO Mercedes AMG F1 W14 Model",
-    specs: "Best desk buddy that reminds me to build things piece by piece",
-    image: "https://target.scene7.com/is/image/Target/GUEST_a41ab1c9-072f-4e21-b8af-1e64bdc18338?wid=800&hei=800&fmt=pjpeg",
+    name: "Cosmic Byte C3070W Controller",
+    specs: "2.4G wireless • analog sticks • USB-C",
+    image: "/img/gears/controller.jpg",
+    tooltip: "skill issue not included in the box 🎮",
+  },
+  {
+    name: "LEGO Mercedes AMG F1 W14",
+    specs: "1,642 pieces • 1:8 scale • best desk therapy",
+    image: "/img/gears/lego.jpg",
+    tooltip: "when code breaks, i build LEGOs 🏎️",
   },
 ];
 
@@ -143,31 +161,36 @@ export default function AboutPage() {
         {/* My Gears Section */}
         <AnimateIn variant="fadeUp" delay={0.4}>
           <section className="mb-8">
-            <h2 className="text-xl sm:text-2xl font-bold mb-4">My Gears</h2>
-            <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-4">
+            <h2 className="text-xl sm:text-2xl font-bold mb-1">My Gears</h2>
+            <p className="text-sm text-zinc-500 dark:text-zinc-400 mb-5">
               The weapons I use to ship code and build cool stuff
             </p>
-            <div className="space-y-3">
+            <div className="grid grid-cols-2 gap-3">
               {gears.map((gear, index) => (
-                <div key={index} className="group flex gap-3 items-center hover:translate-x-1 transition-all duration-300">
-                  <div className="relative w-14 h-14 sm:w-16 sm:h-16 flex-shrink-0 rounded-lg overflow-hidden bg-zinc-100 dark:bg-zinc-800 border border-zinc-200 dark:border-zinc-700">
-                    <Image
-                      src={gear.image}
-                      alt={gear.name}
-                      fill
-                      className="object-cover grayscale group-hover:grayscale-0 transition-all duration-300 group-hover:scale-105"
-                      unoptimized
-                    />
+                <Tooltip key={index} content={gear.tooltip} delay={150} wrapperClassName="relative block">
+                  <div className="group rounded-xl overflow-hidden border border-zinc-200 dark:border-zinc-800 hover:border-zinc-300 dark:hover:border-zinc-600 bg-white dark:bg-zinc-900 transition-all duration-300 hover:shadow-lg dark:hover:shadow-zinc-950/50 hover:-translate-y-1 cursor-pointer">
+                    <div className="relative h-36 sm:h-40 w-full bg-white dark:bg-white overflow-hidden">
+                      <div className="absolute inset-3">
+                        <Image
+                          src={gear.image}
+                          alt={gear.name}
+                          fill
+                          className="object-contain grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-[1.06]"
+                          unoptimized
+                        />
+                      </div>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+                    </div>
+                    <div className="p-2.5 sm:p-3 border-t border-zinc-100 dark:border-zinc-800">
+                      <h3 className="text-xs sm:text-sm font-semibold text-zinc-900 dark:text-zinc-100 leading-tight mb-0.5">
+                        {gear.name}
+                      </h3>
+                      <p className="text-[10px] sm:text-xs text-zinc-500 dark:text-zinc-400 leading-relaxed line-clamp-2">
+                        {gear.specs}
+                      </p>
+                    </div>
                   </div>
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-sm font-medium text-zinc-900 dark:text-zinc-100 leading-tight">
-                      {gear.name}
-                    </h3>
-                    <p className="text-xs text-zinc-500 dark:text-zinc-400 mt-0.5 leading-relaxed">
-                      {gear.specs}
-                    </p>
-                  </div>
-                </div>
+                </Tooltip>
               ))}
             </div>
           </section>

@@ -188,6 +188,18 @@ export default function Home() {
                 priority
               />
             </div>
+            <div className="mt-4 bg-zinc-900/90 backdrop-blur-sm rounded-xl p-4 border border-white/10 text-white">
+              <p className="text-sm font-semibold mb-2 text-orange-400">Rohit Debnath, apparently 👋</p>
+              <ul className="space-y-1.5 text-xs text-zinc-300 leading-relaxed">
+                <li>🪿 professionally obsessed with ducks (it&apos;s a personality)</li>
+                <li>💻 builds and ships things at 2am, regrets nothing</li>
+                <li>🏆 won 4 hackathons, lost sleep doing it</li>
+                <li>🤓 the boring-but-reliable guy in the group chat</li>
+                <li>☕ powered by chai, not coffee (controversial take)</li>
+                <li>🔧 if it can be automated, I&apos;ve already thought about it</li>
+              </ul>
+              <p className="text-[10px] text-zinc-500 mt-3 italic">yes this is actually me. no filters were harmed.</p>
+            </div>
           </div>
         </div>
       )}
@@ -742,6 +754,14 @@ const projects = [
 ];
 
 const experience = [
+  {
+    role: "Intern",
+    company: "intervue.io",
+    period: "Dec 2025 - Present",
+    description:
+      "Currently interning at intervue.io, working on building and improving their platform.",
+    technologies: [],
+  },
   {
     role: "SDE - Part-Time Remote (USA)",
     company: "SparkMentis Ai",

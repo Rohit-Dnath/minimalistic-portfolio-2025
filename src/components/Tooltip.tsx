@@ -6,9 +6,10 @@ interface TooltipProps {
   children: ReactNode;
   content: React.ReactNode;
   delay?: number;
+  wrapperClassName?: string;
 }
 
-export function Tooltip({ children, content, delay = 300 }: TooltipProps) {
+export function Tooltip({ children, content, delay = 300, wrapperClassName }: TooltipProps) {
   const [isVisible, setIsVisible] = useState(false);
   const [timeoutId, setTimeoutId] = useState<NodeJS.Timeout | null>(null);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -46,9 +47,9 @@ export function Tooltip({ children, content, delay = 300 }: TooltipProps) {
   };
 
   return (
-    <div 
+    <div
       ref={containerRef}
-      className="relative inline-block"
+      className={wrapperClassName ?? "relative inline-block"}
       onMouseEnter={showTooltip}
       onMouseLeave={hideTooltip}
       onMouseMove={handleMouseMove}
