@@ -110,7 +110,7 @@ export default function AboutPage() {
             className="relative w-full aspect-[2/1] max-w-xl mx-auto mb-2 rounded-xl sm:rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 cursor-pointer group"
           >
             <Image
-              src="/gallery/good_pic.jpg"
+              src="/gallery/good_pic.webp"
               alt="Rohit"
               fill
               className="object-cover object-center grayscale group-hover:grayscale-[50%] transition-all duration-500 group-hover:scale-105"

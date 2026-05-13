@@ -8,7 +8,7 @@ import { useState } from "react";
 
 const galleryImages = [
   { src: "/gallery/img18.webp", alt: "Memory 18" },
-  { src: "/gallery/good_pic.jpg", alt: "Rohit" },
+  { src: "/gallery/good_pic.webp", alt: "Rohit" },
   { src: "/gallery/image.webp", alt: "Memory 9" },
   { src: "/gallery/img1.webp", alt: "Memory 1" },
   { src: "/gallery/img2.webp", alt: "Memory 2" },

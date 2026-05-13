@@ -116,7 +116,7 @@ export default function Home() {
                       onClick={() => setProfilePhotoOpen(true)}
                     >
                       <Image
-                        src="/gallery/good_pic.jpg"
+                        src="/gallery/good_pic.webp"
                         alt="Rohit"
                         fill
                         className="object-cover"
@@ -181,7 +181,7 @@ export default function Home() {
             </button>
             <div className="relative w-full aspect-square rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
               <Image
-                src="/gallery/good_pic.jpg"
+                src="/gallery/good_pic.webp"
                 alt="Rohit"
                 fill
                 className="object-cover"
