@@ -267,30 +267,9 @@ export default function Home() {
                 </Tooltip>
                 <span className="mx-1 sm:mx-2">•</span>
                 <span className="flex flex-wrap items-center gap-1">
-                  <span>currently grinning at</span>{" "}
+                  <span>currently</span>{" "}
                   <span className="font-semibold text-green-600 dark:text-green-400">
-                    <Tooltip
-                      content={
-                        <span className="flex items-center gap-2 px-1.5 py-1">
-                          <span className="relative w-5 h-5 rounded overflow-hidden bg-white flex-shrink-0">
-                            <Image
-                              src="/img/intervue.io_logo.webp"
-                              alt="intervue.io"
-                              width={20}
-                              height={20}
-                              className="object-contain"
-                              priority={false}
-                            />
-                          </span>
-                          <span className="text-xs text-black font-medium whitespace-nowrap">
-                            Intern
-                          </span>
-                        </span>
-                      }
-                      delay={120}
-                    >
-                      <span className="cursor-pointer">intervue.io</span>
-                    </Tooltip>
+                    Founding Engineer @ Zeise
                   </span>
                 </span>
               </div>
@@ -757,9 +736,9 @@ const experience = [
   {
     role: "Intern",
     company: "intervue.io",
-    period: "Dec 2025 - Present",
+    period: "Dec 2025 - July 2026",
     description:
-      "Currently interning at intervue.io, working on building and improving their platform.",
+      "Interned at intervue.io, working on building and improving their platform.",
     technologies: [],
   },
   {
